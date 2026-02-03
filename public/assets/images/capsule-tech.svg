@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="techGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00A8E8"/>
+      <stop offset="100%" style="stop-color:#0066FF"/>
+    </linearGradient>
+    <linearGradient id="techGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00C9A7"/>
+      <stop offset="100%" style="stop-color:#00A8E8"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0A0A0A"/>
+  
+  <!-- Réseau de connexions de fond -->
+  <g opacity="0.15">
+    <circle cx="100" cy="100" r="50" fill="none" stroke="#00A8E8" stroke-width="1"/>
+    <circle cx="700" cy="100" r="50" fill="none" stroke="#00A8E8" stroke-width="1"/>
+    <circle cx="100" cy="500" r="50" fill="none" stroke="#00A8E8" stroke-width="1"/>
+    <circle cx="700" cy="500" r="50" fill="none" stroke="#00A8E8" stroke-width="1"/>
+    <line x1="150" y1="100" x2="650" y2="100" stroke="#00A8E8" stroke-width="1"/>
+    <line x1="150" y1="500" x2="650" y2="500" stroke="#00A8E8" stroke-width="1"/>
+    <line x1="100" y1="150" x2="100" y2="450" stroke="#00A8E8" stroke-width="1"/>
+    <line x1="700" y1="150" x2="700" y2="450" stroke="#00A8E8" stroke-width="1"/>
+  </g>
+  
+  <!-- Smartphone central (interface app) -->
+  <g transform="translate(400, 300)" filter="url(#glow)">
+    <!-- Cadre du téléphone -->
+    <rect x="-70" y="-120" width="140" height="240" fill="#0A0A0A" stroke="url(#techGrad1)" stroke-width="3" rx="20"/>
+    <rect x="-60" y="-100" width="120" height="200" fill="#0d1117" rx="5"/>
+    
+    <!-- Écran app -->
+    <rect x="-55" y="-95" width="110" height="30" fill="url(#techGrad2)" rx="5"/>
+    <text x="0" y="-75" font-family="Montserrat, sans-serif" font-size="10" fill="#0A0A0A" text-anchor="middle" font-weight="700">LIEN LOCAL</text>
+    
+    <!-- Liste de voisins -->
+    <g transform="translate(0, -40)">
+      <circle cx="-40" cy="0" r="15" fill="none" stroke="#00C9A7" stroke-width="1.5"/>
+      <circle cx="-40" cy="-3" r="5" fill="#00C9A7"/>
+      <text x="-15" y="0" font-family="Quicksand, sans-serif" font-size="9" fill="#FFFFFF">Marie - 50m</text>
+      <text x="-15" y="10" font-family="Quicksand, sans-serif" font-size="7" fill="#00C9A7">Café ensemble ?</text>
+    </g>
+    
+    <g transform="translate(0, 0)">
+      <circle cx="-40" cy="0" r="15" fill="none" stroke="#00A8E8" stroke-width="1.5"/>
+      <circle cx="-40" cy="-3" r="5" fill="#00A8E8"/>
+      <text x="-15" y="0" font-family="Quicksand, sans-serif" font-size="9" fill="#FFFFFF">Lucas - 120m</text>
+      <text x="-15" y="10" font-family="Quicksand, sans-serif" font-size="7" fill="#00A8E8">Partage vélo</text>
+    </g>
+    
+    <g transform="translate(0, 40)">
+      <circle cx="-40" cy="0" r="15" fill="none" stroke="#FFD700" stroke-width="1.5"/>
+      <circle cx="-40" cy="-3" r="5" fill="#FFD700"/>
+      <text x="-15" y="0" font-family="Quicksand, sans-serif" font-size="9" fill="#FFFFFF">Emma - 200m</text>
+      <text x="-15" y="10" font-family="Quicksand, sans-serif" font-size="7" fill="#FFD700">Jardinage</text>
+    </g>
+    
+    <!-- Bouton CTA -->
+    <rect x="-45" y="70" width="90" height="25" fill="#00C9A7" rx="12"/>
+    <text x="0" y="87" font-family="Montserrat, sans-serif" font-size="9" fill="#0A0A0A" text-anchor="middle" font-weight="600">RENCONTRER</text>
+  </g>
+  
+  <!-- Personnes physiques connectées -->
+  <g filter="url(#glow)">
+    <!-- Personne 1 (gauche haut) -->
+    <circle cx="180" cy="200" r="35" fill="none" stroke="#00C9A7" stroke-width="2"/>
+    <circle cx="180" cy="188" r="12" fill="#00C9A7" opacity="0.8"/>
+    <line x1="180" y1="200" x2="180" y2="235" stroke="#00C9A7" stroke-width="3"/>
+    <line x1="165" y1="220" x2="195" y2="220" stroke="#00C9A7" stroke-width="3"/>
+    
+    <!-- Personne 2 (droite haut) -->
+    <circle cx="620" cy="200" r="35" fill="none" stroke="#00A8E8" stroke-width="2"/>
+    <circle cx="620" cy="188" r="12" fill="#00A8E8" opacity="0.8"/>
+    <line x1="620" y1="200" x2="620" y2="235" stroke="#00A8E8" stroke-width="3"/>
+    <line x1="605" y1="220" x2="635" y2="220" stroke="#00A8E8" stroke-width="3"/>
+    
+    <!-- Personne 3 (gauche bas) -->
+    <circle cx="180" cy="420" r="35" fill="none" stroke="#0066FF" stroke-width="2"/>
+    <circle cx="180" cy="408" r="12" fill="#0066FF" opacity="0.8"/>
+    <line x1="180" y1="420" x2="180" y2="455" stroke="#0066FF" stroke-width="3"/>
+    <line x1="165" y1="440" x2="195" y2="440" stroke="#0066FF" stroke-width="3"/>
+    
+    <!-- Personne 4 (droite bas) -->
+    <circle cx="620" cy="420" r="35" fill="none" stroke="#FFD700" stroke-width="2"/>
+    <circle cx="620" cy="408" r="12" fill="#FFD700" opacity="0.8"/>
+    <line x1="620" y1="420" x2="620" y2="455" stroke="#FFD700" stroke-width="3"/>
+    <line x1="605" y1="440" x2="635" y2="440" stroke="#FFD700" stroke-width="3"/>
+  </g>
+  
+  <!-- Lignes de connexion (du numérique vers le physique) -->
+  <g opacity="0.6">
+    <!-- Du téléphone vers les personnes -->
+    <path d="M 330 280 Q 250 240 215 200" fill="none" stroke="#00C9A7" stroke-width="2" stroke-dasharray="8 4">
+      <animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 470 280 Q 550 240 585 200" fill="none" stroke="#00A8E8" stroke-width="2" stroke-dasharray="8 4">
+      <animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 330 340 Q 250 380 215 420" fill="none" stroke="#0066FF" stroke-width="2" stroke-dasharray="8 4">
+      <animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 470 340 Q 550 380 585 420" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="8 4">
+      <animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Connexions entre personnes (rencontres physiques) -->
+    <line x1="220" y1="200" x2="580" y2="200" stroke="#FFFFFF" stroke-width="1" opacity="0.3" stroke-dasharray="3 6"/>
+    <line x1="180" y1="250" x2="180" y2="380" stroke="#FFFFFF" stroke-width="1" opacity="0.3" stroke-dasharray="3 6"/>
+    <line x1="620" y1="250" x2="620" y2="380" stroke="#FFFFFF" stroke-width="1" opacity="0.3" stroke-dasharray="3 6"/>
+    <line x1="220" y1="420" x2="580" y2="420" stroke="#FFFFFF" stroke-width="1" opacity="0.3" stroke-dasharray="3 6"/>
+  </g>
+  
+  <!-- Icônes de rencontre -->
+  <g opacity="0.8">
+    <circle cx="400" cy="200" r="15" fill="#00C9A7">
+      <animate attributeName="r" values="12;18;12" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="400" y="205" font-family="sans-serif" font-size="14" fill="#0A0A0A" text-anchor="middle">☕</text>
+    
+    <circle cx="400" cy="420" r="15" fill="#FFD700">
+      <animate attributeName="r" values="12;18;12" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="400" y="425" font-family="sans-serif" font-size="14" fill="#0A0A0A" text-anchor="middle">🌱</text>
+  </g>
+  
+  <!-- Titre -->
+  <text x="400" y="60" font-family="Montserrat, sans-serif" font-size="18" fill="#00A8E8" text-anchor="middle" font-weight="700" filter="url(#glow)">DU DIGITAL VERS LE RÉEL</text>
+  <text x="400" y="85" font-family="Quicksand, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle" opacity="0.7">La technologie qui rapproche les humains</text>
+  
+  <!-- Labels -->
+  <text x="180" y="280" font-family="Quicksand, sans-serif" font-size="10" fill="#00C9A7" text-anchor="middle">MARIE</text>
+  <text x="620" y="280" font-family="Quicksand, sans-serif" font-size="10" fill="#00A8E8" text-anchor="middle">LUCAS</text>
+  <text x="180" y="490" font-family="Quicksand, sans-serif" font-size="10" fill="#0066FF" text-anchor="middle">PAUL</text>
+  <text x="620" y="490" font-family="Quicksand, sans-serif" font-size="10" fill="#FFD700" text-anchor="middle">EMMA</text>
+</svg>
