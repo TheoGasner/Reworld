@@ -599,23 +599,24 @@ onMounted(() => {
   .header-nav {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 70%;
-    max-width: 300px;
+    left: 0;
+    width: 100%;
     height: 100vh;
     background: rgba(10, 10, 10, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2.5rem;
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 3rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
     z-index: 1000;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .header-nav.open {
-    right: 0;
+    opacity: 1;
+    visibility: visible;
   }
   
   .nav-link {

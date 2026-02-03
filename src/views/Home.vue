@@ -286,6 +286,7 @@ export default {
   background: transparent;
   position: relative;
   z-index: 1;
+  overflow-x: hidden;
 }
 
 /* ==========================================
