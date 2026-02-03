@@ -100,6 +100,7 @@
           loading-anim-type="none"
         ></spline-viewer>
         <div class="spline-logo-cover"></div>
+        <div class="spline-joinus-cover"></div>
         
         <!-- Zone interactive circulaire pour la sphère -->
         <div class="sphere-interactive-zone"></div>
@@ -686,6 +687,18 @@ export default {
   right: 0;
   width: 250px;
   height: 80px;
+  background: #000000;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Masque pour cacher le bouton Join Us de Spline */
+.spline-joinus-cover {
+  position: absolute;
+  top: 69%;
+  left: 18%;
+  width: 200px;
+  height: 60px;
   background: #000000;
   z-index: 100;
   pointer-events: none;
