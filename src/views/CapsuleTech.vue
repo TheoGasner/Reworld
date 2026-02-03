@@ -76,13 +76,6 @@
           <span>Découvrir le système</span>
           <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
         </button>
-
-        <!-- Navigation Capsules -->
-        <div class="capsule-nav">
-          <router-link to="/capsule-demo" class="nav-capsule prev">← Capsule 02</router-link>
-          <span class="nav-current">Capsule 03</span>
-          <router-link to="/capsule-nature" class="nav-capsule next">Capsule 04 →</router-link>
-        </div>
       </div>
 
       <!-- Connexions animées -->
@@ -363,14 +356,14 @@
           <span class="counter-value">−{{ liveCounter.toxicityReduced }}%</span>
         </div>
       </div>
+    </section>
 
-      <!-- CTA Capsule suivante -->
-      <div class="next-capsule">
-        <router-link to="/capsule-nature" class="next-capsule-btn">
-          <span>Capsule suivante</span>
-          <span class="next-title">Nature Reconnectée</span>
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </router-link>
+    <!-- Navigation Capsules -->
+    <section class="capsule-nav-section">
+      <div class="capsule-nav">
+        <router-link to="/capsule-demo" class="nav-capsule prev">← Capsule 02</router-link>
+        <span class="nav-current">Capsule 03</span>
+        <router-link to="/capsule-nature" class="nav-capsule next">Capsule 04 →</router-link>
       </div>
     </section>
 
@@ -968,12 +961,22 @@ export default {
 }
 
 /* Navigation Capsules */
+.capsule-nav-section {
+  background: #0a0a0a;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
 .capsule-nav {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  margin-top: 3rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-capsule {

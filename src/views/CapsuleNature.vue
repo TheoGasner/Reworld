@@ -70,13 +70,6 @@
           <span>🌱 Plante ton arbre</span>
           <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
         </button>
-
-        <!-- Navigation Capsules -->
-        <div class="capsule-nav">
-          <router-link to="/capsule-tech" class="nav-capsule prev">← Capsule 03</router-link>
-          <span class="nav-current">Capsule 04</span>
-          <router-link to="/" class="nav-capsule next">Accueil →</router-link>
-        </div>
       </div>
 
       <!-- Particules feuilles tombantes -->
@@ -539,14 +532,14 @@
           <span class="counter-value cyan">{{ liveCounter.co2 }} tonnes</span>
         </div>
       </div>
+    </section>
 
-      <!-- Retour Accueil -->
-      <div class="back-home">
-        <router-link to="/" class="back-home-btn">
-          <span>Retour à l'accueil</span>
-          <span class="home-title">Explorer d'autres futurs</span>
-          <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10"/></svg>
-        </router-link>
+    <!-- Navigation Capsules -->
+    <section class="capsule-nav-section">
+      <div class="capsule-nav">
+        <router-link to="/capsule-tech" class="nav-capsule prev">← Capsule 03</router-link>
+        <span class="nav-current">Capsule 04</span>
+        <router-link to="/" class="nav-capsule next">Accueil →</router-link>
       </div>
     </section>
 
@@ -1247,12 +1240,22 @@ export default {
 }
 
 /* Navigation Capsules */
+.capsule-nav-section {
+  background: #0a0a0a;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
 .capsule-nav {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  margin-top: 3rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-capsule {

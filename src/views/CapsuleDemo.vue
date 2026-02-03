@@ -351,14 +351,14 @@
           <span class="counter-value">{{ liveCounter.satisfaction }}%</span>
         </div>
       </div>
+    </section>
 
-      <!-- CTA Capsule suivante -->
-      <div class="next-capsule">
-        <router-link to="/capsule-tech" class="next-capsule-btn">
-          <span>Capsule suivante</span>
-          <span class="next-title">Tech au service du Lien</span>
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </router-link>
+    <!-- Navigation Capsules -->
+    <section class="capsule-nav-section">
+      <div class="capsule-nav">
+        <router-link to="/capsule-eco" class="nav-capsule prev">← Capsule 01</router-link>
+        <span class="nav-current">Capsule 02</span>
+        <router-link to="/capsule-tech" class="nav-capsule next">Capsule 03 →</router-link>
       </div>
     </section>
 
@@ -912,6 +912,48 @@ export default {
   stroke: currentColor;
   stroke-width: 2;
   fill: none;
+}
+
+/* Navigation Capsules */
+.capsule-nav-section {
+  background: #0a0a0a;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.capsule-nav {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-capsule {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-capsule:hover {
+  color: var(--cyan-electric);
+}
+
+.nav-current {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cyan-electric);
+  padding: 0.5rem 1rem;
+  background: rgba(6, 182, 212, 0.1);
+  border-radius: 20px;
 }
 
 /* Vote Particles */
