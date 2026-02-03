@@ -1,10 +1,5 @@
 <template>
   <div class="loading-screen" :class="{ 'fade-out': isFadingOut }">
-    <!-- Globe en arrière-plan qui apparaît progressivement -->
-    <div class="loading-globe-bg" :style="{ opacity: globeOpacity }">
-      <img src="/assets/images/globe-hero.svg" alt="" class="loading-globe-img">
-    </div>
-    
     <!-- Contenu du loader -->
     <div class="loading-content" :class="{ 'slide-up': isComplete }">
       <!-- Logo REWORLD PNG -->
@@ -12,19 +7,20 @@
       
       <!-- Barre de progression -->
       <div class="loading-bar-container">
-        <div class="loading-bar" :style="{ width: progress + '%' }"></div>
+        <div class="loading-bar" :style="{ width: displayProgress + '%' }"></div>
       </div>
       
-      <!-- Texte -->
+      <!-- Texte de phase -->
       <p class="loading-text">
-        Initialisation capsules...<span class="loading-percent">{{ Math.floor(progress) }}</span>%
+        <span class="loading-phase">{{ currentPhase }}</span>
+        <span class="loading-percent">{{ Math.floor(displayProgress) }}%</span>
       </p>
     </div>
   </div>
 </template>
 
 <script>
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 export default {
   name: 'LoadingScreen',
@@ -38,15 +34,41 @@ export default {
   setup(props, { emit }) {
     const isComplete = ref(false)
     const isFadingOut = ref(false)
+    const displayProgress = ref(0)
     
-    // L'opacité du globe augmente avec le chargement
-    const globeOpacity = computed(() => {
-      return Math.min(props.progress / 100, 0.4)
+    // Phases de chargement
+    const phases = [
+      { threshold: 0, text: 'Connexion...' },
+      { threshold: 30, text: 'Chargement des ressources...' },
+      { threshold: 60, text: 'Initialisation des capsules...' },
+      { threshold: 85, text: 'Finalisation...' }
+    ]
+    
+    const currentPhase = computed(() => {
+      for (let i = phases.length - 1; i >= 0; i--) {
+        if (displayProgress.value >= phases[i].threshold) {
+          return phases[i].text
+        }
+      }
+      return phases[0].text
     })
     
+    // Animation fluide du pourcentage affiché
     watch(() => props.progress, (newVal) => {
+      // Interpolation vers la nouvelle valeur
+      const animate = () => {
+        if (displayProgress.value < newVal) {
+          displayProgress.value = Math.min(displayProgress.value + 0.8, newVal)
+          if (displayProgress.value < newVal) {
+            requestAnimationFrame(animate)
+          }
+        }
+      }
+      animate()
+      
       if (newVal >= 100 && !isComplete.value) {
         isComplete.value = true
+        displayProgress.value = 100
         
         // Animation de slide up du contenu
         setTimeout(() => {
@@ -63,7 +85,8 @@ export default {
     return {
       isComplete,
       isFadingOut,
-      globeOpacity
+      displayProgress,
+      currentPhase
     }
   }
 }
@@ -76,7 +99,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #0A0A0A;
+  background: #000000;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -88,31 +111,6 @@ export default {
 .loading-screen.fade-out {
   opacity: 0;
   visibility: hidden;
-}
-
-/* Globe en arrière-plan */
-.loading-globe-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 150vmax;
-  height: 150vmax;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-}
-
-.loading-globe-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  animation: slowRotate 60s linear infinite;
-  filter: blur(2px);
-}
-
-@keyframes slowRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 /* Contenu du loader */
@@ -134,6 +132,7 @@ export default {
   height: auto;
   margin-bottom: 3rem;
   animation: pulse 2s ease-in-out infinite;
+  filter: brightness(0) invert(1);
 }
 
 @keyframes pulse {
@@ -145,7 +144,7 @@ export default {
   width: 300px;
   max-width: 80vw;
   height: 4px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 2px;
   overflow: hidden;
   margin: 0 auto 1.5rem;
@@ -153,21 +152,32 @@ export default {
 
 .loading-bar {
   height: 100%;
-  background: linear-gradient(90deg, #00C9A7, #00A8E8);
+  background: #FFFFFF;
   border-radius: 2px;
   transition: width 0.1s ease;
 }
 
 .loading-text {
   font-family: 'Quicksand', sans-serif;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.05em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.loading-phase {
+  color: rgba(255, 255, 255, 0.8);
+  transition: opacity 0.3s ease;
 }
 
 .loading-percent {
-  color: #00C9A7;
+  color: #FFFFFF;
   font-weight: 600;
+  font-size: 0.85rem;
+  opacity: 0.5;
 }
 
 @media (max-width: 480px) {

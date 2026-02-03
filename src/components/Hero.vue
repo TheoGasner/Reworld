@@ -1,26 +1,5 @@
 <template>
   <section class="hero-section">
-    <!-- Loading Screen Original REWORLD -->
-    <div class="loading-screen" :class="{ 'fade-out': loadingFadeOut }">
-      <!-- Globe en arrière-plan qui apparaît progressivement -->
-      <div class="loading-globe-bg" :style="{ opacity: loadingGlobeOpacity }">
-        <img src="/assets/images/globe-hero.svg" alt="" class="loading-globe-img">
-      </div>
-      
-      <!-- Contenu du loader -->
-      <div class="loading-content" :class="{ 'slide-up': loadingSlideUp }">
-        <img src="/assets/images/logo-reworld.svg" alt="REWORLD" class="loading-logo">
-        
-        <span class="loading-percent">{{ Math.floor(loadingProgress) }}%</span>
-        
-        <div class="loading-bar-container">
-          <div class="loading-bar" :style="{ width: loadingProgress + '%' }"></div>
-        </div>
-        
-        <p class="loading-text">{{ loadingMessage }}</p>
-      </div>
-    </div>
-
     <!-- Header fixe -->
     <header class="hero-header" :class="{ visible: headerVisible }">
       <div class="header-left">
@@ -67,12 +46,9 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted } from 'vue'
 
 // États
-const loadingProgress = ref(0)
-const loadingSlideUp = ref(false)
-const loadingFadeOut = ref(false)
 const earthVisible = ref(false)
 const headerVisible = ref(false)
 const contentVisible = ref(false)
@@ -87,71 +63,22 @@ const closeMenu = () => {
   menuOpen.value = false
 }
 
-// Opacité du globe de chargement (augmente avec le progress)
-const loadingGlobeOpacity = computed(() => {
-  return Math.min(loadingProgress.value / 100, 0.4)
-})
-
-// Messages de chargement
-const loadingMessages = [
-  'Initialisation capsules...',
-  'Connexion aux futurs...',
-  'Synchronisation temporelle...',
-  'Chargement des visions...'
-]
-const loadingMessage = ref(loadingMessages[0])
-
-// Scroll vers capsules
-const scrollToCapsules = () => {
-  const capsulesSection = document.getElementById('capsules')
-  if (capsulesSection) {
-    capsulesSection.scrollIntoView({ behavior: 'smooth' })
-  }
-}
-
 onMounted(() => {
-  const loadingDuration = 3500
-  const loadingInterval = 30
-  let progress = 0
-  
-  const loadingTimer = setInterval(() => {
-    progress += (100 / (loadingDuration / loadingInterval))
-    loadingProgress.value = Math.min(progress, 100)
-    
-    if (progress < 25) loadingMessage.value = loadingMessages[0]
-    else if (progress < 50) loadingMessage.value = loadingMessages[1]
-    else if (progress < 75) loadingMessage.value = loadingMessages[2]
-    else loadingMessage.value = loadingMessages[3]
-    
-    if (progress >= 100) {
-      clearInterval(loadingTimer)
-      
-      // Animation slide-up du contenu puis fade-out
-      setTimeout(() => {
-        loadingSlideUp.value = true
-        
-        setTimeout(() => {
-          loadingFadeOut.value = true
-        }, 500)
-      }, 300)
-    }
-  }, loadingInterval)
-
-  // Timeline animations (après le loading)
+  // Timeline animations (après le loading de App.vue)
   // 1. La Terre arrive d'en bas
   setTimeout(() => {
     earthVisible.value = true
-  }, 4000)
+  }, 300)
 
   // 2. Header apparaît après que la Terre soit en place
   setTimeout(() => {
     headerVisible.value = true
-  }, 5500)
+  }, 1500)
 
   // 3. Logo et sous-titre apparaissent ensemble
   setTimeout(() => {
     contentVisible.value = true
-  }, 5800)
+  }, 1800)
 })
 </script>
 
@@ -184,113 +111,7 @@ onMounted(() => {
   background: var(--black);
 }
 
-/* ==========================================
-   LOADING SCREEN
-   ========================================== */
-.loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000000;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: opacity 0.8s ease, visibility 0.8s;
-}
 
-.loading-screen.fade-out {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.loading-globe-bg {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 0;
-}
-
-.loading-globe-img {
-  width: min(80vw, 80vh);
-  height: min(80vw, 80vh);
-  object-fit: contain;
-  animation: slowRotate 60s linear infinite;
-  filter: brightness(0.6) saturate(1.2);
-  transition: opacity 0.5s ease;
-}
-
-@keyframes slowRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.loading-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
-              opacity 0.6s ease;
-}
-
-.loading-content.slide-up {
-  transform: translateY(-100vh);
-  opacity: 0;
-}
-
-.loading-logo {
-  width: 12rem;
-  max-width: 60vw;
-  height: auto;
-  margin-bottom: 2rem;
-  animation: logoPulse 2s ease-in-out infinite;
-}
-
-@keyframes logoPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.03); opacity: 0.85; }
-}
-
-.loading-percent {
-  display: block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--cyan-accent);
-  margin-bottom: 1.5rem;
-  text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
-}
-
-.loading-bar-container {
-  width: 280px;
-  max-width: 70vw;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-  overflow: hidden;
-  margin: 0 auto 1.5rem;
-}
-
-.loading-bar {
-  height: 100%;
-  background: linear-gradient(90deg, var(--blue-main), var(--cyan-accent));
-  border-radius: 2px;
-  transition: width 0.1s linear;
-}
-
-.loading-text {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 0.9rem;
-  color: var(--white-60);
-  letter-spacing: 0.05em;
-  min-height: 1.5rem;
-}
 
 /* ==========================================
    HEADER

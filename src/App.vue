@@ -66,20 +66,52 @@ export default {
       return false
     })
 
-    // Simulation du chargement
+    // Simulation du chargement saccadé réaliste
     onMounted(() => {
-      const duration = 2500
-      const interval = 25
-      const increment = 100 / (duration / interval)
+      // Étapes de chargement simplifiées et rapides
+      const loadingSteps = [
+        { target: 30, duration: 500, pause: 200 },   // Connexion
+        { target: 60, duration: 550, pause: 150 },   // Ressources
+        { target: 85, duration: 500, pause: 200 },   // Capsules
+        { target: 100, duration: 400, pause: 0 }     // Finalisation
+      ]
       
-      const loader = setInterval(() => {
-        loadingProgress.value += increment + Math.random() * 0.5
+      let currentStep = 0
+      
+      const runStep = () => {
+        if (currentStep >= loadingSteps.length) return
         
-        if (loadingProgress.value >= 100) {
-          loadingProgress.value = 100
-          clearInterval(loader)
-        }
-      }, interval)
+        const step = loadingSteps[currentStep]
+        const startValue = loadingProgress.value
+        const increment = step.target - startValue
+        const intervalTime = 25
+        const steps = step.duration / intervalTime
+        const stepIncrement = increment / steps
+        let currentIteration = 0
+        
+        const stepInterval = setInterval(() => {
+          const randomFactor = 0.8 + Math.random() * 0.4
+          loadingProgress.value += stepIncrement * randomFactor
+          currentIteration++
+          
+          if (loadingProgress.value >= step.target || currentIteration >= steps) {
+            loadingProgress.value = step.target
+            clearInterval(stepInterval)
+            
+            if (step.pause > 0) {
+              setTimeout(() => {
+                currentStep++
+                runStep()
+              }, step.pause)
+            } else {
+              currentStep++
+              runStep()
+            }
+          }
+        }, intervalTime)
+      }
+      
+      setTimeout(runStep, 100)
     })
 
     const onLoadingComplete = () => {
