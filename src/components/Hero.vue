@@ -28,10 +28,18 @@
           <img src="/assets/images/logo-reworld.svg" alt="REWORLD" class="header-logo" />
         </router-link>
       </div>
-      <nav class="header-nav">
-        <a href="#capsules" class="nav-link">Capsules</a>
-        <a href="#concept" class="nav-link">Concept</a>
-        <router-link to="/contact" class="nav-link">Contact</router-link>
+      
+      <!-- Menu hamburger mobile -->
+      <button class="hamburger" :class="{ active: menuOpen }" @click="toggleMenu" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav class="header-nav" :class="{ open: menuOpen }">
+        <a href="#capsules" class="nav-link" @click="closeMenu">Capsules</a>
+        <a href="#concept" class="nav-link" @click="closeMenu">Concept</a>
+        <router-link to="/contact" class="nav-link" @click="closeMenu">Contact</router-link>
       </nav>
     </header>
 
@@ -68,6 +76,16 @@ const loadingFadeOut = ref(false)
 const earthVisible = ref(false)
 const headerVisible = ref(false)
 const contentVisible = ref(false)
+const menuOpen = ref(false)
+
+// Toggle menu hamburger
+const toggleMenu = () => {
+  menuOpen.value = !menuOpen.value
+}
+
+const closeMenu = () => {
+  menuOpen.value = false
+}
 
 // Opacité du globe de chargement (augmente avec le progress)
 const loadingGlobeOpacity = computed(() => {
@@ -358,6 +376,42 @@ onMounted(() => {
   width: 100%;
 }
 
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #FFFFFF;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* ==========================================
    BACKGROUND - IMAGE TERRE
    ========================================== */
@@ -536,12 +590,36 @@ onMounted(() => {
     width: 6rem;
   }
   
+  /* Afficher le hamburger */
+  .hamburger {
+    display: flex;
+  }
+  
+  /* Menu mobile */
   .header-nav {
-    gap: 1.25rem;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .header-nav.open {
+    right: 0;
   }
   
   .nav-link {
-    font-size: 0.75rem;
+    font-size: 1.25rem;
   }
   
   .hero-content {
@@ -567,12 +645,8 @@ onMounted(() => {
 }
 
 @media (max-width: 480px) {
-  .header-nav {
-    gap: 0.75rem;
-  }
-  
   .nav-link {
-    font-size: 0.65rem;
+    font-size: 1.1rem;
   }
   
   .cta-btn {
