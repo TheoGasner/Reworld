@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="ecoGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00C9A7"/>
+      <stop offset="100%" style="stop-color:#00A8E8"/>
+    </linearGradient>
+    <linearGradient id="ecoGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0066FF"/>
+      <stop offset="100%" style="stop-color:#00C9A7"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0A0A0A"/>
+  
+  <!-- Grid futuriste -->
+  <g opacity="0.1">
+    <line x1="0" y1="100" x2="800" y2="100" stroke="#00C9A7" stroke-width="1"/>
+    <line x1="0" y1="200" x2="800" y2="200" stroke="#00C9A7" stroke-width="1"/>
+    <line x1="0" y1="300" x2="800" y2="300" stroke="#00C9A7" stroke-width="1"/>
+    <line x1="0" y1="400" x2="800" y2="400" stroke="#00C9A7" stroke-width="1"/>
+    <line x1="0" y1="500" x2="800" y2="500" stroke="#00C9A7" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="600" stroke="#00C9A7" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="600" stroke="#00C9A7" stroke-width="1"/>
+    <line x1="300" y1="0" x2="300" y2="600" stroke="#00C9A7" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="600" stroke="#00C9A7" stroke-width="1"/>
+    <line x1="500" y1="0" x2="500" y2="600" stroke="#00C9A7" stroke-width="1"/>
+    <line x1="600" y1="0" x2="600" y2="600" stroke="#00C9A7" stroke-width="1"/>
+    <line x1="700" y1="0" x2="700" y2="600" stroke="#00C9A7" stroke-width="1"/>
+  </g>
+  
+  <!-- Hub central régénératif -->
+  <g transform="translate(400, 300)" filter="url(#glow)">
+    <!-- Cercle central -->
+    <circle cx="0" cy="0" r="80" fill="none" stroke="url(#ecoGrad1)" stroke-width="3"/>
+    <circle cx="0" cy="0" r="60" fill="none" stroke="url(#ecoGrad1)" stroke-width="2" opacity="0.7"/>
+    <circle cx="0" cy="0" r="40" fill="none" stroke="url(#ecoGrad1)" stroke-width="1.5" opacity="0.5"/>
+    
+    <!-- Symbole de recyclage/régénération -->
+    <path d="M 0 -30 L 26 15 L -26 15 Z" fill="none" stroke="#00C9A7" stroke-width="2" opacity="0.8"/>
+    <circle cx="0" cy="0" r="15" fill="#00C9A7" opacity="0.3"/>
+    <circle cx="0" cy="0" r="8" fill="#00C9A7"/>
+  </g>
+  
+  <!-- Satellites/Marchés connectés -->
+  <g filter="url(#glow)">
+    <!-- Marché 1 -->
+    <circle cx="200" cy="150" r="40" fill="none" stroke="url(#ecoGrad2)" stroke-width="2"/>
+    <circle cx="200" cy="150" r="20" fill="#0066FF" opacity="0.3"/>
+    <circle cx="200" cy="150" r="10" fill="#0066FF"/>
+    
+    <!-- Marché 2 -->
+    <circle cx="600" cy="150" r="40" fill="none" stroke="url(#ecoGrad2)" stroke-width="2"/>
+    <circle cx="600" cy="150" r="20" fill="#00A8E8" opacity="0.3"/>
+    <circle cx="600" cy="150" r="10" fill="#00A8E8"/>
+    
+    <!-- Marché 3 -->
+    <circle cx="150" cy="400" r="40" fill="none" stroke="url(#ecoGrad2)" stroke-width="2"/>
+    <circle cx="150" cy="400" r="20" fill="#00C9A7" opacity="0.3"/>
+    <circle cx="150" cy="400" r="10" fill="#00C9A7"/>
+    
+    <!-- Marché 4 -->
+    <circle cx="650" cy="400" r="40" fill="none" stroke="url(#ecoGrad2)" stroke-width="2"/>
+    <circle cx="650" cy="400" r="20" fill="#FFD700" opacity="0.3"/>
+    <circle cx="650" cy="400" r="10" fill="#FFD700"/>
+  </g>
+  
+  <!-- Connexions flux -->
+  <g opacity="0.6">
+    <line x1="240" y1="180" x2="350" y2="260" stroke="#00C9A7" stroke-width="2" stroke-dasharray="5 5">
+      <animate attributeName="stroke-dashoffset" values="10;0" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="560" y1="180" x2="450" y2="260" stroke="#00A8E8" stroke-width="2" stroke-dasharray="5 5">
+      <animate attributeName="stroke-dashoffset" values="10;0" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="190" y1="360" x2="350" y2="320" stroke="#00C9A7" stroke-width="2" stroke-dasharray="5 5">
+      <animate attributeName="stroke-dashoffset" values="10;0" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="610" y1="370" x2="450" y2="320" stroke="#FFD700" stroke-width="2" stroke-dasharray="5 5">
+      <animate attributeName="stroke-dashoffset" values="10;0" dur="1s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Particules de flux -->
+  <circle r="4" fill="#00C9A7">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M 240 180 L 350 260"/>
+  </circle>
+  <circle r="4" fill="#00A8E8">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M 560 180 L 450 260"/>
+  </circle>
+  <circle r="4" fill="#00C9A7">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M 190 360 L 350 320"/>
+  </circle>
+  <circle r="4" fill="#FFD700">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M 610 370 L 450 320"/>
+  </circle>
+  
+  <!-- Légendes holographiques -->
+  <text x="200" y="210" font-family="Montserrat, sans-serif" font-size="12" fill="#0066FF" text-anchor="middle" opacity="0.8">PRODUCTEURS</text>
+  <text x="600" y="210" font-family="Montserrat, sans-serif" font-size="12" fill="#00A8E8" text-anchor="middle" opacity="0.8">ARTISANS</text>
+  <text x="150" y="460" font-family="Montserrat, sans-serif" font-size="12" fill="#00C9A7" text-anchor="middle" opacity="0.8">RECYCLEURS</text>
+  <text x="650" y="460" font-family="Montserrat, sans-serif" font-size="12" fill="#FFD700" text-anchor="middle" opacity="0.8">CITOYENS</text>
+  <text x="400" y="400" font-family="Montserrat, sans-serif" font-size="14" fill="#00C9A7" text-anchor="middle" font-weight="600">HUB RÉGÉNÉRATIF</text>
+</svg>
