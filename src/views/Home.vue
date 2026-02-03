@@ -695,12 +695,12 @@ export default {
 /* Masque pour cacher le bouton Join Us de Spline */
 .spline-joinus-cover {
   position: absolute;
-  top: 60%;
+  top: 69%;
   left: 0;
-  width: 100%;
-  height: 200px;
+  width: calc(18% + 250px);
+  height: 85px;
   background: #000000;
-  z-index: 100;
+  z-index: 140;
   pointer-events: none;
 }
 
