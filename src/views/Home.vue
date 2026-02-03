@@ -93,23 +93,45 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
-      <spline-viewer 
-        url="https://prod.spline.design/6u1JM2hDbJFzgH2v/scene.splinecode"
-        loading-anim-type="none"
-      ></spline-viewer>
-      <div class="spline-logo-cover"></div>
-      
-      <!-- Zone interactive circulaire pour la sphère -->
-      <div class="sphere-interactive-zone"></div>
-      
-      <!-- Bouton Contact overlay -->
-      <div class="contact-overlay">
-        <router-link to="/contact" class="contact-btn">
-          <span>Contactez-nous</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </router-link>
+      <!-- Version Desktop : Spline -->
+      <div class="contact-desktop">
+        <spline-viewer 
+          url="https://prod.spline.design/6u1JM2hDbJFzgH2v/scene.splinecode"
+          loading-anim-type="none"
+        ></spline-viewer>
+        <div class="spline-logo-cover"></div>
+        
+        <!-- Zone interactive circulaire pour la sphère -->
+        <div class="sphere-interactive-zone"></div>
+        
+        <!-- Bouton Contact overlay -->
+        <div class="contact-overlay">
+          <router-link to="/contact" class="contact-btn">
+            <span>Contactez-nous</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </router-link>
+        </div>
+      </div>
+
+      <!-- Version Mobile : Alternative stylée -->
+      <div class="contact-mobile">
+        <div class="mobile-bg">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="orb orb-3"></div>
+        </div>
+        <div class="mobile-content">
+          <h2 class="mobile-title">Rejoignez le mouvement</h2>
+          <p class="mobile-desc">Une question ? Une idée ? Construisons ensemble les futurs désirables.</p>
+          <router-link to="/contact" class="contact-btn">
+            <span>Contactez-nous</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </router-link>
+        </div>
       </div>
     </section>
     
@@ -541,11 +563,106 @@ export default {
   overflow: hidden;
 }
 
-.contact-section spline-viewer {
+/* Desktop version */
+.contact-desktop {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.contact-desktop spline-viewer {
   width: 100%;
   height: 100%;
   display: block;
   pointer-events: none;
+}
+
+/* Mobile version - masquée par défaut */
+.contact-mobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: orbFloat 8s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #00C9A7, #00A8E8);
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #0066FF, #00C9A7);
+  top: 50%;
+  right: 10%;
+  animation-delay: -3s;
+}
+
+.orb-3 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #00A8E8, #10B981);
+  bottom: 15%;
+  left: 30%;
+  animation-delay: -5s;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(20px, -30px) scale(1.1); }
+  50% { transform: translate(-15px, 20px) scale(0.95); }
+  75% { transform: translate(25px, 15px) scale(1.05); }
+}
+
+.mobile-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 2rem;
+}
+
+.mobile-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+.mobile-desc {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 /* Zone interactive circulaire pour la sphère uniquement */
@@ -812,6 +929,23 @@ export default {
 /* ==========================================
    Responsive
    ========================================== */
+
+/* Basculer Desktop/Mobile pour section Contact */
+@media (max-width: 900px) {
+  .contact-desktop {
+    display: none;
+  }
+  
+  .contact-mobile {
+    display: flex;
+  }
+  
+  .contact-section {
+    height: 60vh;
+    min-height: 400px;
+  }
+}
+
 @media (max-width: 1024px) {
   .footer-container {
     grid-template-columns: 1fr 1fr;
