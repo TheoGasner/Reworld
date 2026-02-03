@@ -13,6 +13,7 @@ import MentionsLegales from './views/MentionsLegales.vue'
 import CGU from './views/CGU.vue'
 import PolitiqueConfidentialite from './views/PolitiqueConfidentialite.vue'
 import Contact from './views/Contact.vue'
+import NotFound from './views/NotFound.vue'
 
 // Configuration du router
 const routes = [
@@ -25,6 +26,7 @@ const routes = [
   { path: '/cgu', name: 'CGU', component: CGU },
   { path: '/politique-confidentialite', name: 'PolitiqueConfidentialite', component: PolitiqueConfidentialite },
   { path: '/contact', name: 'Contact', component: Contact },
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ]
 
 const router = createRouter({
