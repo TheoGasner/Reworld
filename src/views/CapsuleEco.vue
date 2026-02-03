@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="capsule-page capsule-eco">
     <!-- Header Fixe -->
     <header class="capsule-header" :class="{ 'visible': headerVisible }">
@@ -30,17 +30,17 @@
         
         <div class="hero-ticker">
           <div class="ticker-content">
-            <span class="ticker-item"><span class="ticker-dot"></span>Live : −67% CO₂ global</span>
+            <span class="ticker-item"><span class="ticker-dot"></span>65% transactions régénératrices</span>
             <span class="ticker-separator">|</span>
-            <span class="ticker-item">+342% sols vivants</span>
+            <span class="ticker-item">12g CO₂/€ capturé</span>
             <span class="ticker-separator">|</span>
-            <span class="ticker-item">8B connectés</span>
+            <span class="ticker-item">760M ha régénérés</span>
           </div>
         </div>
       </div>
       
-      <button class="scroll-cta" @click="scrollToHub">
-        <span>Explorer le Hub</span>
+      <button class="cta-btn" @click="scrollToHub">
+        <span>Découvrir le système</span>
         <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </button>
     </section>
@@ -59,11 +59,10 @@
         <div class="hub-text">
           <h2 class="section-title">Le Hub Régénératif Global</h2>
           <div class="hub-narrative">
-            <p>2050. Un réseau économique vivant connecte <strong>3 milliards de producteurs</strong>, 
-            <strong>2 milliards d'artisans</strong> et <strong>8 milliards de citoyens</strong>.</p>
-            <p>Chaque transaction régénère la planète. Les circuits courts représentent désormais 
-            <strong>67%</strong> de l'approvisionnement mondial, réduisant l'empreinte carbone alimentaire 
-            de <strong>2.4 à 0.8t</strong> par habitant.</p>
+            <p>2050. Chaque transaction est un acte de régénération. <strong>65% des échanges mondiaux</strong> 
+            intègrent désormais un indice d'impact positif sur la planète.</p>
+            <p>Chaque euro dépensé capture <strong>12g de CO₂</strong>. Les marchés planétaires ont permis 
+            de régénérer <strong>760 millions d'hectares</strong> de terres dégradées.</p>
           </div>
           
           <div class="hub-stats">
@@ -96,27 +95,27 @@
             <div class="orbit-node node-producers">
               <div class="node-dot"></div>
               <div class="node-info">
-                <span class="node-icon">🌾</span>
-                <span class="node-name">Producteurs</span>
-                <span class="node-count">3 Mds</span>
+                <span class="node-icon">🛒</span>
+                <span class="node-name">1. Achat local</span>
+                <span class="node-count">Circuit court</span>
               </div>
             </div>
             
             <div class="orbit-node node-artisans">
               <div class="node-dot"></div>
               <div class="node-info">
-                <span class="node-icon">🔧</span>
-                <span class="node-name">Artisans</span>
-                <span class="node-count">2 Mds</span>
+                <span class="node-icon">🌱</span>
+                <span class="node-name">2. Impact traçé</span>
+                <span class="node-count">CO₂ capturé</span>
               </div>
             </div>
             
             <div class="orbit-node node-citizens">
               <div class="node-dot"></div>
               <div class="node-info">
-                <span class="node-icon">👥</span>
-                <span class="node-name">Citoyens</span>
-                <span class="node-count">8 Mds</span>
+                <span class="node-icon">🔄</span>
+                <span class="node-name">3. Réinvestissement</span>
+                <span class="node-count">Sols régénérés</span>
               </div>
             </div>
             
@@ -131,74 +130,80 @@
     <section class="dashboard-section" ref="dashboardSection">
       <div class="dashboard-bg"></div>
       
-      <h2 class="section-title centered">Les chiffres planétaires 2050</h2>
+      <h2 class="section-title centered">Les marchés planétaires 2050</h2>
       
       <div class="dashboard-grid">
-        <!-- Card CO₂ -->
+        <!-- Card 1: Transactions Régénératrices -->
         <div class="data-card" :class="{ 'visible': cardsVisible }">
           <div class="card-header">
-            <span class="card-icon">🌍</span>
-            <span class="card-label">CO₂ Transport Alimentaire Global</span>
+            <span class="card-icon">💱</span>
+            <span class="card-label">Transactions Régénératrices</span>
           </div>
-          <div class="card-value">
-            <span class="value-old">2.4t</span>
-            <span class="value-arrow">→</span>
-            <span class="value-new" ref="co2Value">{{ animatedCO2 }}t/hab</span>
+          <div class="card-value single">
+            <span class="value-highlight green">{{ animatedCO2 }}%</span>
           </div>
           <div class="card-chart">
             <div class="bar-chart">
-              <div class="bar bar-old" :style="{ height: '100%' }">
+              <div class="bar bar-old" :style="{ height: '15%' }">
                 <span>2024</span>
               </div>
-              <div class="bar bar-new" :style="{ height: `${(0.8/2.4)*100}%` }">
+              <div class="bar bar-new" :style="{ height: '100%' }">
                 <span>2050</span>
               </div>
             </div>
           </div>
-          <p class="card-text">1.6 milliards de tonnes CO₂/an sauvées grâce aux circuits courts</p>
-          <span class="card-source">Source: World Bank Data</span>
+          <p class="card-text">En 2050, 65% des transactions mondiales incluent un impact régénératif</p>
+          <span class="card-source">Projection basée sur: Ellen MacArthur Foundation</span>
         </div>
         
-        <!-- Card Sols -->
+        <!-- Card 2: Chaque Euro Régénère -->
         <div class="data-card" :class="{ 'visible': cardsVisible }" style="--delay: 0.2s">
           <div class="card-header">
             <span class="card-icon">🌱</span>
-            <span class="card-label">Rendements Sols Régénératifs</span>
+            <span class="card-label">Chaque Euro Régénère</span>
           </div>
           <div class="card-value single">
-            <span class="value-highlight green">+{{ animatedSoils }}%</span>
+            <span class="value-highlight green">{{ animatedSoils }}g</span>
           </div>
-          <div class="card-map">
-            <div class="continent" v-for="cont in continents" :key="cont.name" 
-              :style="{ left: cont.x, top: cont.y }" :class="cont.class">
-              <span class="cont-pulse"></span>
+          <div class="card-comparison">
+            <div class="comparison-item">
+              <div class="comparison-bar-container">
+                <div class="comparison-bar standard" :style="{ width: '17%' }"></div>
+              </div>
+              <span class="comparison-label">2024 : ~2g CO₂ séquestré/€</span>
+            </div>
+            <div class="comparison-item">
+              <div class="comparison-bar-container">
+                <div class="comparison-bar regen" :style="{ width: '100%' }"></div>
+              </div>
+              <span class="comparison-label">2050 : 12g CO₂ séquestré/€</span>
             </div>
           </div>
-          <p class="card-text">Capacité de nourrir 10 milliards d'humains atteinte</p>
-          <span class="card-source">Source: Rodale Institute</span>
+          <p class="card-text">Chaque euro dépensé dans l'économie régénératrice séquestre 12g de CO₂</p>
+          <span class="card-source">Projection basée sur: FAO & Project Drawdown</span>
         </div>
         
-        <!-- Card Climat -->
+        <!-- Card 3: Hectares Régénérés -->
         <div class="data-card" :class="{ 'visible': cardsVisible }" style="--delay: 0.4s">
           <div class="card-header">
-            <span class="card-icon">🌡️</span>
-            <span class="card-label">Réchauffement Climatique Limité</span>
+            <span class="card-icon">�</span>
+            <span class="card-label">Hectares Régénérés</span>
           </div>
           <div class="card-value single">
-            <span class="value-highlight orange">+{{ animatedTemp }}°C</span>
+            <span class="value-highlight orange">{{ animatedTemp }}M</span>
           </div>
           <div class="card-thermo">
             <div class="thermo-body">
-              <div class="thermo-fill" :style="{ height: `${(1.8/3)*100}%` }"></div>
+              <div class="thermo-fill" :style="{ height: '76%' }"></div>
               <div class="thermo-target"></div>
             </div>
             <div class="thermo-labels">
-              <span class="label-danger">+2.5°C évité</span>
-              <span class="label-safe">+1.8°C stabilisé</span>
+              <span class="label-danger">Objectif: 1 Md ha</span>
+              <span class="label-safe">2050: 760M ha</span>
             </div>
           </div>
-          <p class="card-text">0.7°C de réchauffement évités par l'économie régénératrice</p>
-          <span class="card-source">Source: NASA GISS</span>
+          <p class="card-text">L'agriculture régénératrice pourrait séquestrer 9.4 Gt CO₂/an</p>
+          <span class="card-source">Projection basée sur: UN Decade on Ecosystem Restoration</span>
         </div>
       </div>
     </section>
@@ -308,10 +313,8 @@
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Navigation Capsules -->
-    <section class="capsule-nav-section">
+      <!-- Navigation Capsules -->
       <div class="capsule-nav">
         <router-link to="/" class="nav-capsule prev">← Accueil</router-link>
         <span class="nav-current">Capsule 01</span>
@@ -375,9 +378,9 @@ export default {
     
     // Data
     const hubStats = [
-      { icon: '🌾', value: '3B', label: 'sols régénérés (+342%)', source: 'Rodale Institute' },
-      { icon: '🛠️', value: '2B', label: 'artisans circulaires', source: 'Ellen MacArthur Foundation' },
-      { icon: '🌍', value: '8B', label: 'co-créateurs actifs', source: 'World Bank' }
+      { icon: '💱', value: '65%', label: 'transactions régénératrices', source: 'Vision 2050' },
+      { icon: '🌱', value: '12g', label: 'CO₂/€ séquestré', source: 'Vision 2050' },
+      { icon: '🌍', value: '760M', label: 'hectares régénérés', source: 'Vision 2050' }
     ]
     
     const continents = [
@@ -406,25 +409,25 @@ export default {
     
     const globalActions = [
       { 
-        icon: '📍', 
-        title: 'Circuits courts locaux', 
-        desc: 'Trouve les marchés et producteurs près de chez toi',
-        cta: 'Géolocaliser',
-        action: 'geo'
+        icon: '🥕', 
+        title: 'La Ruche Qui Dit Oui', 
+        desc: 'Commande en circuit court auprès de producteurs locaux',
+        cta: 'Commander local',
+        action: 'ruche'
       },
       { 
-        icon: '🛒', 
-        title: 'Artisans planétaires', 
-        desc: 'Marketplace mondiale d\'artisans régénératifs',
-        cta: 'Explorer',
-        action: 'marketplace'
+        icon: '🌾', 
+        title: 'Trouve ton AMAP', 
+        desc: 'Rejoins une Association pour le Maintien d\'une Agriculture Paysanne',
+        cta: 'Trouver une AMAP',
+        action: 'amap'
       },
       { 
-        icon: '⚡', 
-        title: 'Hydrogène 2050', 
-        desc: 'Découvre la prochaine capsule technologique',
-        cta: 'Capsule 02',
-        action: 'capsule2'
+        icon: '🤝', 
+        title: 'C\'est qui le Patron ?!', 
+        desc: 'La marque du consommateur pour une économie plus juste',
+        cta: 'Découvrir',
+        action: 'patron'
       }
     ]
     
@@ -530,21 +533,17 @@ export default {
     
     const handleAction = (action) => {
       switch(action.action) {
-        case 'geo':
-          // Géolocalisation circuits courts
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((pos) => {
-              const { latitude, longitude } = pos.coords
-              window.open(`https://www.openstreetmap.org/?mlat=${latitude}&mlon=${longitude}#map=14/${latitude}/${longitude}`, '_blank')
-            })
-          }
+        case 'ruche':
+          // La Ruche Qui Dit Oui - circuits courts
+          window.open('https://laruchequiditoui.fr/', '_blank')
           break
-        case 'marketplace':
-          window.open('https://www.etsy.com/market/artisan_local', '_blank')
+        case 'amap':
+          // Réseau des AMAP
+          window.open('https://reseau-amap.org/recherche-amap', '_blank')
           break
-        case 'capsule2':
-          // Navigation vers capsule tech
-          window.location.href = '/capsule-tech'
+        case 'patron':
+          // C'est qui le patron - marque du consommateur
+          window.open('https://lamarqueduconsommateur.com/', '_blank')
           break
       }
     }
@@ -566,9 +565,9 @@ export default {
       checkVisibility(dashboardSection.value, () => {
         if (!cardsVisible.value) {
           cardsVisible.value = true
-          animateValue(animatedCO2, 0.8, 2000, 1)
-          animateValue(animatedSoils, 342, 2500, 0)
-          animateValue(animatedTemp, 1.8, 2000, 1)
+          animateValue(animatedCO2, 65, 2000, 0)    // 65% transactions régénératrices 2050
+          animateValue(animatedSoils, 12, 2500, 0)  // 12g CO₂/€ 2050
+          animateValue(animatedTemp, 760, 2000, 0)  // 760M hectares régénérés
         }
       })
     }
@@ -614,17 +613,22 @@ export default {
 
 <style scoped>
 /* ==========================================
-   VARIABLES CAPSULE ECO
+   VARIABLES CAPSULE ECO - ÉCONOMIE RÉGÉNÉRATRICE
    ========================================== */
 .capsule-eco {
-  --cyan-primary: #00D4FF;
-  --cyan-glow: rgba(0, 212, 255, 0.4);
-  --cyan-dark: #0099CC;
+  /* Palette Régénératrice: Verts */
+  --eco-primary: #00C9A7;      /* Vert régénératif - croissance */
+  --eco-glow: rgba(0, 201, 167, 0.4);
+  --eco-dark: #00A88A;
+  --eco-light: #34D399;         /* Vert émeraude lumineux - accent */
+  --eco-light-glow: rgba(52, 211, 153, 0.4);
+  --eco-emerald: #10B981;       /* Émeraude - sols vivants */
   --black-space: #000;
-  --navy-galaxy: #0A0A2E;
-  --slate-dark: #1A1A3E;
+  --forest-deep: #0A1A12;       /* Forêt profonde */
+  --forest-night: #061510;      /* Nuit forestière */
+  --slate-dark: #0d2818;        /* Sous-bois */
   --green-regen: #00C9A7;
-  --orange-warm: #FF6B35;
+  --orange-warm: #F59E0B;       /* Ambre chaleureux */
 }
 
 .capsule-page {
@@ -682,7 +686,7 @@ export default {
 }
 
 .back-link:hover {
-  color: var(--cyan-primary);
+  color: var(--eco-primary);
 }
 
 .back-arrow {
@@ -709,7 +713,7 @@ export default {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--black-space) 0%, var(--navy-galaxy) 50%, rgba(0, 212, 255, 0.1) 100%);
+  background: linear-gradient(135deg, var(--black-space) 0%, var(--forest-deep) 50%, rgba(0, 201, 167, 0.15) 100%);
 }
 
 /* Matrix Rain Effect */
@@ -724,7 +728,7 @@ export default {
   position: absolute;
   top: -20px;
   left: var(--x);
-  color: var(--cyan-primary);
+  color: var(--eco-primary);
   font-family: 'Courier New', monospace;
   font-size: 14px;
   animation: matrixFall var(--duration) var(--delay) linear infinite;
@@ -749,9 +753,9 @@ export default {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, var(--cyan-primary), var(--cyan-dark), var(--navy-galaxy));
+  background: radial-gradient(circle at 30% 30%, var(--eco-primary), var(--eco-emerald), var(--forest-deep));
   box-shadow: 
-    0 0 60px var(--cyan-glow),
+    0 0 60px var(--eco-glow),
     inset -20px -20px 60px rgba(0,0,0,0.5);
   animation: globeFloat 6s ease-in-out infinite, globeRotate 20s linear infinite;
 }
@@ -770,14 +774,14 @@ export default {
   position: absolute;
   inset: -20px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--eco-glow) 0%, transparent 70%);
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
 .globe-pulse {
   position: absolute;
   inset: -40px;
-  border: 2px solid var(--cyan-primary);
+  border: 2px solid var(--eco-primary);
   border-radius: 50%;
   opacity: 0;
   animation: pulseBorder 3s ease-out infinite;
@@ -819,7 +823,7 @@ export default {
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, var(--cyan-primary) 0%, #0066FF 100%);
+  background: linear-gradient(135deg, var(--eco-primary) 0%, var(--eco-light) 50%, var(--eco-emerald) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -845,8 +849,8 @@ export default {
 .hero-ticker {
   display: inline-flex;
   padding: 1rem 2rem;
-  background: rgba(0, 212, 255, 0.1);
-  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: rgba(0, 201, 167, 0.1);
+  border: 1px solid rgba(0, 201, 167, 0.3);
   border-radius: 50px;
   backdrop-filter: blur(10px);
 }
@@ -858,14 +862,14 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--cyan-primary);
+  color: var(--eco-primary);
 }
 
 .ticker-dot {
   display: inline-block;
   width: 8px;
   height: 8px;
-  background: var(--cyan-primary);
+  background: var(--eco-light);
   border-radius: 50%;
   margin-right: 0.5rem;
   animation: tickerPulse 1.5s ease-in-out infinite;
@@ -880,62 +884,52 @@ export default {
   color: rgba(255, 255, 255, 0.3);
 }
 
-/* Scroll CTA */
-.scroll-cta {
-  position: absolute;
-  bottom: 3rem;
-  display: flex;
-  flex-direction: column;
+/* CTA Button */
+.cta-btn {
+  position: relative;
+  z-index: 50;
+  display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.scroll-cta:hover {
-  color: var(--cyan-primary);
-}
-
-.scroll-cta span {
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(34, 197, 94, 0.6), 0 0 20px rgba(34, 197, 94, 0.4);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-.scroll-cta svg {
-  width: 24px;
-  height: 24px;
+.cta-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(34, 197, 94, 0.7), 0 0 30px rgba(34, 197, 94, 0.5);
+  background: linear-gradient(135deg, #4ADE80 0%, #22C55E 100%);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.cta-btn svg {
+  width: 20px;
+  height: 20px;
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-width: 2.5;
   fill: none;
-  animation: bounceDown 2s ease-in-out infinite;
-}
-
-@keyframes bounceDown {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
 }
 
 /* Navigation Capsules */
-.capsule-nav-section {
-  background: #0a0a0a;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
 .capsule-nav {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+  position: relative;
+  z-index: 20;
 }
 
 .nav-capsule {
@@ -945,6 +939,8 @@ export default {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 .nav-capsule:hover {
@@ -974,7 +970,7 @@ export default {
 .hub-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, var(--navy-galaxy) 0%, var(--black-space) 100%);
+  background: linear-gradient(180deg, #0a1a12 0%, #061510 100%);
 }
 
 .flux-lines {
@@ -990,7 +986,7 @@ export default {
 
 .flux-path {
   fill: none;
-  stroke: var(--green-regen);
+  stroke: var(--eco-primary);
   stroke-width: 1;
   stroke-dasharray: 10 5;
   animation: fluxFlow 3s linear infinite;
@@ -1037,7 +1033,7 @@ export default {
 }
 
 .hub-narrative strong {
-  color: var(--cyan-primary);
+  color: var(--eco-light);
 }
 
 /* Hub Stats */
@@ -1052,8 +1048,8 @@ export default {
   flex-direction: column;
   gap: 0.25rem;
   padding: 1rem;
-  background: rgba(0, 212, 255, 0.05);
-  border: 1px solid rgba(0, 212, 255, 0.2);
+  background: rgba(0, 201, 167, 0.05);
+  border: 1px solid rgba(0, 201, 167, 0.2);
   border-radius: 12px;
   flex: 1;
   min-width: 150px;
@@ -1067,7 +1063,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
   font-weight: 800;
-  color: var(--cyan-primary);
+  color: var(--eco-light);
 }
 
 .stat-label {
@@ -1099,7 +1095,7 @@ export default {
 /* Orbites */
 .orbit {
   position: absolute;
-  border: 1px solid rgba(0, 212, 255, 0.15);
+  border: 1px solid rgba(0, 201, 167, 0.15);
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -1109,7 +1105,7 @@ export default {
 .orbit-1 {
   width: 120px;
   height: 120px;
-  border-color: rgba(0, 212, 255, 0.25);
+  border-color: rgba(0, 201, 167, 0.25);
 }
 
 .orbit-2 {
@@ -1125,8 +1121,8 @@ export default {
 }
 
 @keyframes orbitPulse {
-  0%, 100% { border-color: rgba(0, 212, 255, 0.1); }
-  50% { border-color: rgba(0, 212, 255, 0.3); }
+  0%, 100% { border-color: rgba(0, 201, 167, 0.1); }
+  50% { border-color: rgba(0, 201, 167, 0.3); }
 }
 
 /* Hub Central */
@@ -1146,7 +1142,7 @@ export default {
   position: absolute;
   width: 100px;
   height: 100px;
-  background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--eco-glow) 0%, transparent 70%);
   border-radius: 50%;
   animation: glowPulse 2s ease-in-out infinite;
 }
@@ -1159,12 +1155,12 @@ export default {
 .center-core {
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, var(--cyan-primary), var(--cyan-dark));
+  background: linear-gradient(135deg, var(--eco-primary), var(--eco-dark));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 30px var(--cyan-glow), inset 0 0 20px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 30px var(--eco-glow), inset 0 0 20px rgba(255, 255, 255, 0.1);
   position: relative;
   z-index: 2;
 }
@@ -1178,7 +1174,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--cyan-primary);
+  color: var(--eco-primary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -1261,11 +1257,11 @@ export default {
   position: absolute;
   width: 6px;
   height: 6px;
-  background: var(--cyan-primary);
+  background: var(--eco-light);
   border-radius: 50%;
   top: 50%;
   left: 50%;
-  box-shadow: 0 0 10px var(--cyan-primary);
+  box-shadow: 0 0 10px var(--eco-light);
   animation: orbitParticle var(--particle-duration, 4s) linear infinite;
   animation-delay: var(--particle-delay, 0s);
   --orbit-radius: var(--particle-orbit, 100px);
@@ -1296,7 +1292,7 @@ export default {
 .dashboard-bg {
   position: absolute;
   inset: 0;
-  background: var(--slate-dark);
+  background: linear-gradient(180deg, var(--forest-night) 0%, var(--slate-dark) 100%);
 }
 
 .dashboard-grid {
@@ -1311,8 +1307,8 @@ export default {
 
 /* Data Cards */
 .data-card {
-  background: linear-gradient(145deg, rgba(0, 212, 255, 0.08) 0%, rgba(0, 0, 0, 0.4) 100%);
-  border: 1px solid rgba(0, 212, 255, 0.2);
+  background: linear-gradient(145deg, rgba(0, 201, 167, 0.08) 0%, rgba(0, 0, 0, 0.4) 100%);
+  border: 1px solid rgba(0, 201, 167, 0.2);
   border-radius: 24px;
   padding: 2rem;
   opacity: 0;
@@ -1328,8 +1324,8 @@ export default {
 
 .data-card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 32px 64px var(--cyan-glow);
-  border-color: var(--cyan-primary);
+  box-shadow: 0 32px 64px var(--eco-glow);
+  border-color: var(--eco-primary);
 }
 
 .card-header {
@@ -1373,15 +1369,15 @@ export default {
 
 .value-arrow {
   font-size: 1.5rem;
-  color: var(--cyan-primary);
+  color: var(--eco-light);
 }
 
 .value-new {
   font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
   font-weight: 800;
-  color: var(--cyan-primary);
-  text-shadow: 0 0 20px var(--cyan-glow);
+  color: var(--eco-primary);
+  text-shadow: 0 0 20px var(--eco-glow);
 }
 
 .value-highlight {
@@ -1396,7 +1392,7 @@ export default {
 }
 
 .value-highlight.orange {
-  background: linear-gradient(135deg, var(--orange-warm), var(--cyan-primary));
+  background: linear-gradient(135deg, var(--orange-warm), var(--eco-light));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1419,7 +1415,7 @@ export default {
 
 .bar {
   width: 60px;
-  background: linear-gradient(180deg, var(--cyan-primary), var(--cyan-dark));
+  background: linear-gradient(180deg, var(--eco-primary), var(--eco-dark));
   border-radius: 8px 8px 0 0;
   display: flex;
   align-items: flex-end;
@@ -1468,6 +1464,50 @@ export default {
   100% { transform: scale(2); opacity: 0; }
 }
 
+/* Comparison Chart - Rendements */
+.card-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+}
+
+.comparison-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.comparison-bar-container {
+  width: 100%;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.comparison-bar {
+  height: 100%;
+  border-radius: 12px;
+  transition: width 2s ease-out;
+}
+
+.comparison-bar.standard {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.15));
+}
+
+.comparison-bar.regen {
+  background: linear-gradient(90deg, var(--eco-primary), var(--eco-light));
+  box-shadow: 0 0 20px var(--eco-glow);
+}
+
+.comparison-label {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 /* Thermometer */
 .card-thermo {
   display: flex;
@@ -1491,7 +1531,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(180deg, var(--orange-warm), var(--cyan-primary));
+  background: linear-gradient(180deg, var(--orange-warm), var(--eco-light));
   border-radius: 15px;
   transition: height 2s ease-out;
 }
@@ -1559,7 +1599,7 @@ export default {
   transform: translate(-50%, -50%);
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--eco-glow) 0%, transparent 70%);
   opacity: 0.3;
 }
 
@@ -1570,17 +1610,17 @@ export default {
   width: 100%;
   padding: 3rem;
   background: rgba(0, 0, 0, 0.6);
-  border: 2px solid rgba(0, 212, 255, 0.3);
+  border: 2px solid rgba(0, 201, 167, 0.3);
   border-radius: 32px;
   backdrop-filter: blur(20px);
-  box-shadow: 0 0 60px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 60px rgba(0, 201, 167, 0.2);
 }
 
 .calc-title {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 700;
-  color: var(--cyan-primary);
+  color: var(--eco-light);
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -1607,8 +1647,8 @@ export default {
 
 .calc-select {
   padding: 1rem;
-  background: rgba(0, 212, 255, 0.1);
-  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: rgba(0, 201, 167, 0.1);
+  border: 1px solid rgba(0, 201, 167, 0.3);
   border-radius: 12px;
   color: #fff;
   font-family: 'Quicksand', sans-serif;
@@ -1619,11 +1659,11 @@ export default {
 
 .calc-select:focus {
   outline: none;
-  border-color: var(--cyan-primary);
+  border-color: var(--eco-primary);
 }
 
 .calc-select option {
-  background: var(--navy-galaxy);
+  background: var(--forest-deep);
 }
 
 .range-container {
@@ -1637,7 +1677,7 @@ export default {
   -webkit-appearance: none;
   appearance: none;
   height: 8px;
-  background: rgba(0, 212, 255, 0.2);
+  background: rgba(0, 201, 167, 0.2);
   border-radius: 4px;
   cursor: pointer;
 }
@@ -1647,9 +1687,9 @@ export default {
   appearance: none;
   width: 24px;
   height: 24px;
-  background: var(--cyan-primary);
+  background: var(--eco-primary);
   border-radius: 50%;
-  box-shadow: 0 0 15px var(--cyan-glow);
+  box-shadow: 0 0 15px var(--eco-glow);
   cursor: pointer;
 }
 
@@ -1657,7 +1697,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--cyan-primary);
+  color: var(--eco-primary);
   min-width: 60px;
   text-align: right;
 }
@@ -1668,7 +1708,7 @@ export default {
   display: block;
   width: 100%;
   padding: 1.25rem 2rem;
-  background: linear-gradient(135deg, var(--cyan-primary) 0%, var(--cyan-dark) 100%);
+  background: linear-gradient(135deg, var(--eco-primary) 0%, var(--eco-dark) 100%);
   border: none;
   border-radius: 16px;
   font-family: 'Montserrat', sans-serif;
@@ -1678,12 +1718,12 @@ export default {
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 16px 48px var(--cyan-glow);
+  box-shadow: 0 16px 48px var(--eco-glow);
 }
 
 .calc-btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 64px var(--cyan-glow);
+  box-shadow: 0 24px 64px var(--eco-glow);
 }
 
 .calc-btn.calculating {
@@ -1733,8 +1773,8 @@ export default {
 .result-card {
   text-align: center;
   padding: 1.5rem;
-  background: rgba(0, 212, 255, 0.1);
-  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: rgba(0, 201, 167, 0.1);
+  border: 1px solid rgba(0, 201, 167, 0.3);
   border-radius: 16px;
   animation: resultPop 0.6s ease-out backwards;
 }
@@ -1753,8 +1793,8 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
   font-weight: 900;
-  color: var(--cyan-primary);
-  text-shadow: 0 0 20px var(--cyan-glow);
+  color: var(--eco-light);
+  text-shadow: 0 0 20px var(--eco-light-glow);
 }
 
 .result-label {
@@ -1790,18 +1830,18 @@ export default {
   width: 100%;
   padding: 1rem;
   background: transparent;
-  border: 2px solid var(--cyan-primary);
+  border: 2px solid var(--eco-primary);
   border-radius: 12px;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--cyan-primary);
+  color: var(--eco-primary);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .save-btn:hover {
-  background: var(--cyan-primary);
+  background: var(--eco-primary);
   color: var(--black-space);
 }
 
@@ -1822,14 +1862,14 @@ export default {
 .actions-section {
   position: relative;
   padding: 8rem 2rem;
-  background: linear-gradient(180deg, var(--black-space) 0%, var(--navy-galaxy) 100%);
+  background: linear-gradient(180deg, #061510 0%, #0d2818 50%, #0a1a12 100%);
 }
 
 .actions-intro {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 300;
-  color: var(--cyan-primary);
+  color: var(--eco-light);
   text-align: center;
   margin-bottom: 4rem;
   opacity: 0.8;
@@ -1846,8 +1886,8 @@ export default {
 .action-card-warp {
   position: relative;
   padding: 2.5rem;
-  background: linear-gradient(145deg, rgba(0, 212, 255, 0.08) 0%, rgba(0, 0, 0, 0.4) 100%);
-  border: 1px solid rgba(0, 212, 255, 0.2);
+  background: linear-gradient(145deg, rgba(0, 201, 167, 0.08) 0%, rgba(0, 0, 0, 0.4) 100%);
+  border: 1px solid rgba(0, 201, 167, 0.2);
   border-radius: 24px;
   cursor: pointer;
   overflow: hidden;
@@ -1856,8 +1896,8 @@ export default {
 
 .action-card-warp:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 32px 64px var(--cyan-glow);
-  border-color: var(--cyan-primary);
+  box-shadow: 0 32px 64px var(--eco-glow);
+  border-color: var(--eco-primary);
 }
 
 .card-inner {
@@ -1890,13 +1930,13 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--cyan-primary);
+  color: var(--eco-primary);
 }
 
 .card-warp-effect {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 50%, var(--cyan-glow) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, var(--eco-glow) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -1910,11 +1950,11 @@ export default {
   max-width: 800px;
   margin: 0 auto 4rem;
   padding: 3rem;
-  background: rgba(0, 212, 255, 0.05);
-  border: 2px solid var(--cyan-primary);
+  background: rgba(0, 201, 167, 0.05);
+  border: 2px solid var(--eco-primary);
   border-radius: 32px;
   text-align: center;
-  box-shadow: 0 0 60px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 60px rgba(0, 201, 167, 0.2);
 }
 
 .counter-globe {
@@ -1927,8 +1967,8 @@ export default {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, var(--cyan-primary), var(--cyan-dark));
-  box-shadow: 0 0 40px var(--cyan-glow);
+  background: radial-gradient(circle at 30% 30%, var(--eco-primary), var(--eco-dark));
+  box-shadow: 0 0 40px var(--eco-glow);
   animation: globeFloat 4s ease-in-out infinite;
 }
 
@@ -1955,8 +1995,8 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
   font-weight: 900;
-  color: var(--cyan-primary);
-  text-shadow: 0 0 20px var(--cyan-glow);
+  color: var(--eco-light);
+  text-shadow: 0 0 20px var(--eco-light-glow);
 }
 
 .counter-label {

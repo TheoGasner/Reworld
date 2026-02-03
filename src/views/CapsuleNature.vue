@@ -67,7 +67,7 @@
         </div>
 
         <button class="cta-btn" @click="scrollToSystem">
-          <span>🌱 Plante ton arbre</span>
+          <span>Découvrir le système</span>
           <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
         </button>
       </div>
@@ -532,10 +532,8 @@
           <span class="counter-value cyan">{{ liveCounter.co2 }} tonnes</span>
         </div>
       </div>
-    </section>
 
-    <!-- Navigation Capsules -->
-    <section class="capsule-nav-section">
+      <!-- Navigation Capsules -->
       <div class="capsule-nav">
         <router-link to="/capsule-tech" class="nav-capsule prev">← Capsule 03</router-link>
         <span class="nav-current">Capsule 04</span>
@@ -1240,22 +1238,15 @@ export default {
 }
 
 /* Navigation Capsules */
-.capsule-nav-section {
-  background: #0a0a0a;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
 .capsule-nav {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+  position: relative;
+  z-index: 20;
 }
 
 .nav-capsule {
@@ -1265,6 +1256,8 @@ export default {
   color: var(--white-60);
   text-decoration: none;
   transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 .nav-capsule:hover {
@@ -1293,7 +1286,7 @@ export default {
 .system-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, var(--navy-deep) 0%, #0d1117 100%);
+  background: linear-gradient(180deg, #071a0f 0%, #0a2515 100%);
 }
 
 /* Ondes organiques */
@@ -2587,7 +2580,7 @@ export default {
 .actions-section {
   position: relative;
   padding: 8rem 2rem 6rem;
-  background: linear-gradient(180deg, #0A0A0A 0%, #0d1117 50%, #0A0A0A 100%);
+  background: linear-gradient(180deg, #0a2515 0%, #0d301a 50%, #071a0f 100%);
 }
 
 .actions-bg {

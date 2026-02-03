@@ -50,7 +50,7 @@
 
         <button class="cta-btn" @click="scrollToSystem">
           <span>Découvrir le système</span>
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
         </button>
       </div>
 
@@ -351,10 +351,8 @@
           <span class="counter-value">{{ liveCounter.satisfaction }}%</span>
         </div>
       </div>
-    </section>
 
-    <!-- Navigation Capsules -->
-    <section class="capsule-nav-section">
+      <!-- Navigation Capsules -->
       <div class="capsule-nav">
         <router-link to="/capsule-eco" class="nav-capsule prev">← Capsule 01</router-link>
         <span class="nav-current">Capsule 02</span>
@@ -915,22 +913,15 @@ export default {
 }
 
 /* Navigation Capsules */
-.capsule-nav-section {
-  background: #0a0a0a;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
 .capsule-nav {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+  position: relative;
+  z-index: 20;
 }
 
 .nav-capsule {
@@ -940,6 +931,8 @@ export default {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 .nav-capsule:hover {
@@ -1000,7 +993,7 @@ export default {
 .system-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, var(--navy-cosmic) 0%, var(--navy-deep) 100%);
+  background: linear-gradient(180deg, #0a1628 0%, #0f2847 100%);
 }
 
 .system-grid {
@@ -1194,7 +1187,7 @@ export default {
 .dashboard-bg {
   position: absolute;
   inset: 0;
-  background: var(--navy-deep);
+  background: linear-gradient(180deg, #0f2847 0%, #061224 100%);
 }
 
 .dashboard-grid {
@@ -1372,7 +1365,7 @@ export default {
 .simulator-bg {
   position: absolute;
   inset: 0;
-  background: #000000;
+  background: linear-gradient(180deg, #061224 0%, #0a0a12 100%);
 }
 
 .simulator-bg::before {
@@ -1763,7 +1756,7 @@ export default {
 .actions-section {
   position: relative;
   padding: 8rem 2rem 6rem;
-  background: linear-gradient(180deg, #0A0A0A 0%, #0d1117 50%, #0A0A0A 100%);
+  background: linear-gradient(180deg, #0a0a12 0%, #0d1a2d 50%, #0a1628 100%);
 }
 
 .actions-bg {

@@ -356,10 +356,8 @@
           <span class="counter-value">−{{ liveCounter.toxicityReduced }}%</span>
         </div>
       </div>
-    </section>
 
-    <!-- Navigation Capsules -->
-    <section class="capsule-nav-section">
+      <!-- Navigation Capsules -->
       <div class="capsule-nav">
         <router-link to="/capsule-demo" class="nav-capsule prev">← Capsule 02</router-link>
         <span class="nav-current">Capsule 03</span>
@@ -961,22 +959,15 @@ export default {
 }
 
 /* Navigation Capsules */
-.capsule-nav-section {
-  background: #0a0a0a;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
 .capsule-nav {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+  position: relative;
+  z-index: 20;
 }
 
 .nav-capsule {
@@ -986,6 +977,8 @@ export default {
   color: var(--white-60);
   text-decoration: none;
   transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 .nav-capsule:hover {
@@ -1014,7 +1007,7 @@ export default {
 .system-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, var(--navy-deep) 0%, #0d1117 100%);
+  background: linear-gradient(180deg, #0a1520 0%, #0d1f30 100%);
 }
 
 .system-grid {
@@ -1252,7 +1245,7 @@ export default {
 .dashboard-bg {
   position: absolute;
   inset: 0;
-  background: #000000;
+  background: linear-gradient(180deg, #0d1f30 0%, #061018 100%);
 }
 
 .dashboard-bg::before {
@@ -1444,7 +1437,7 @@ export default {
 .simulator-bg {
   position: absolute;
   inset: 0;
-  background: #000000;
+  background: linear-gradient(180deg, #061018 0%, #080d14 100%);
 }
 
 .simulator-bg::before {
@@ -1753,7 +1746,7 @@ export default {
 .actions-section {
   position: relative;
   padding: 8rem 2rem 6rem;
-  background: linear-gradient(180deg, #0A0A0A 0%, #0d1117 50%, #0A0A0A 100%);
+  background: linear-gradient(180deg, #080d14 0%, #0a1520 50%, #0d1f30 100%);
 }
 
 .actions-bg {
