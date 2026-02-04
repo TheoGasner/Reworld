@@ -23,9 +23,9 @@
         <div class="section-content">
           <div class="theme-badge">Thème : « Réenchanter le monde »</div>
           
-          <p>J'ai choisi de réaliser un projet intitulé <strong>REWORLD</strong>, en réponse au thème « Réenchanter le monde ». Ce projet propose une expérience de storytelling interactif et immersif qui projette les utilisateurs dans un futur positif et régénéré à l'horizon 2050.</p>
+          <p>J'ai choisi de réaliser un projet intitulé <strong>REWORLD</strong>, en réponse au thème « Réenchanter le monde ». Ce projet propose une expérience de storytelling interactif et immersif qui projette les utilisateurs dans un futur positif et régénéré à l'horizon 2050. L'objectif est de remplacer les discours anxiogènes souvent associés à l'avenir par une vision inspirante, concrète et porteuse d'espoir.</p>
           
-          <p>REWORLD s'articule autour de <strong>quatre capsules narratives</strong>, chacune explorant un domaine clé de la société :</p>
+          <p>REWORLD s'articule autour de <strong>quatre capsules narratives</strong>, chacune explorant un domaine clé de la société : l'économie, la démocratie, la technologie et la nature. À travers ces récits interactifs, l'utilisateur découvre un quotidien transformé, où des choix collectifs et des innovations ont permis d'améliorer la vie humaine et l'équilibre de la planète. Chaque capsule met en scène des situations réalistes et accessibles, montrant comment de petites évolutions peuvent produire de grands changements.</p>
           
           <div class="capsules-grid">
             <div class="capsule-item eco"><span class="capsule-icon">💰</span><span class="capsule-name">Économie</span></div>
@@ -35,7 +35,7 @@
           </div>
           
           <div class="highlight-box">
-            <p>Le projet vise à <strong>sensibiliser, inspirer et engager</strong> le public en proposant une autre manière de penser le futur.</p>
+            <p>Le projet vise à <strong>sensibiliser, inspirer et engager</strong> le public en proposant une autre manière de penser le futur. Plutôt que d'alerter par la peur, REWORLD invite à l'action par la projection positive et la compréhension des leviers de transformation possibles. L'expérience numérique devient ainsi un outil de réflexion, d'espoir et de prise de conscience, illustrant comment il est possible de réenchanter le monde par l'imagination et l'innovation.</p>
           </div>
         </div>
       </section>
@@ -50,15 +50,22 @@
           </svg>
         </div>
         <div class="section-content">
-          <h3>🎯 Public cible</h3>
-          <p>REWORLD s'adresse aux <strong>jeunes adultes et adultes connectés</strong>, sensibles aux enjeux de société et d'innovation.</p>
+          <h3>🎯 Public cible et contexte d'usage</h3>
+          <p>REWORLD s'adresse principalement aux <strong>jeunes adultes et adultes connectés</strong>, sensibles aux enjeux de société, d'écologie et d'innovation, et régulièrement exposés à des discours anxiogènes sur l'avenir. Le projet est pensé pour un usage personnel, dans un moment de découverte, de curiosité ou de réflexion.</p>
+          
+          <h3>✨ Promesse de l'expérience</h3>
+          <p>REWORLD propose une <strong>expérience immersive de storytelling interactif</strong> qui projette l'utilisateur dans un futur régénéré en 2050. En remplaçant la peur par une vision positive et réaliste, le projet réenchante le monde en montrant que des transformations concrètes sont possibles et accessibles. L'expérience apporte inspiration, espoir et compréhension des leviers de changement.</p>
           
           <h3>📣 Objectifs de communication</h3>
           <ul class="objectives-list">
-            <li>Sensibiliser aux grands enjeux actuels</li>
-            <li>Changer le regard porté sur le futur</li>
+            <li>Sensibiliser aux grands enjeux actuels (économie, démocratie, technologie, nature)</li>
+            <li>Changer le regard porté sur le futur en valorisant des scénarios positifs</li>
             <li>Inspirer et encourager une réflexion constructive</li>
+            <li>Montrer que l'évolution du monde passe par des choix collectifs et des innovations</li>
           </ul>
+          
+          <h3>🧭 Mécaniques de parcours envisagées</h3>
+          <p>L'utilisateur découvre une introduction immersive avant d'accéder aux quatre capsules narratives, chacune centrée sur un thème. Chaque capsule propose un récit interactif mêlant textes courts, visuels, animations et choix simples, permettant d'explorer un quotidien transformé en 2050. Le ton est positif, accessible et immersif. Des éléments de médiation (chiffres clés, comparaisons présent/futur, messages d'impact) renforcent la compréhension et l'engagement.</p>
         </div>
       </section>
 
@@ -72,7 +79,19 @@
           </svg>
         </div>
         <div class="section-content">
-          <h3>🛠️ Stack technique</h3>
+          <p>Le projet prendra la forme d'un <strong>site web immersif</strong>, servant à la fois d'expérience interactive et de support de rendu. Il sera développé à l'aide de technologies web classiques (HTML, CSS, JavaScript), avec une attention particulière portée aux animations, transitions et à la narration visuelle.</p>
+          
+          <h3>🎯 Principales intentions techniques</h3>
+          <ul class="objectives-list">
+            <li>Création d'une introduction animée immersive</li>
+            <li>Mise en place de parcours interactifs pour chaque capsule narrative</li>
+            <li>Intégration de visuels, d'animations légères et d'effets de défilement</li>
+          </ul>
+          
+          <h3>⚠️ Enjeux et difficultés</h3>
+          <p>Les enjeux concernent l'<strong>équilibre entre immersion et performance</strong>, ainsi que la clarté de navigation. Les difficultés envisagées portent principalement sur la gestion des animations et la fluidité de l'expérience sur différents supports (responsive).</p>
+          
+          <h3>🛠️ Stack technique utilisée</h3>
           <div class="tech-stack">
             <div class="tech-item"><span class="tech-icon">⚡</span><span class="tech-name">Vue.js 3</span><span class="tech-desc">Framework JavaScript réactif</span></div>
             <div class="tech-item"><span class="tech-icon">🚀</span><span class="tech-name">Vite</span><span class="tech-desc">Build tool ultra-rapide</span></div>
@@ -97,10 +116,13 @@
             <p class="pitch-tagline">Voyager dans un futur régénéré pour réenchanter le monde</p>
           </div>
           <div class="pitch-content">
-            <p>REWORLD est une <strong>expérience de storytelling interactif</strong> qui plonge les utilisateurs en 2050, dans un quotidien transformé et positif.</p>
+            <p>REWORLD est une <strong>expérience de storytelling interactif</strong> qui plonge les utilisateurs en 2050, dans un quotidien transformé et positif. À travers quatre capsules narratives dédiées à l'économie, la démocratie, la technologie et la nature, le projet propose de découvrir comment le monde peut évoluer grâce à des choix collectifs et des innovations concrètes.</p>
+            
+            <p>Face aux discours anxiogènes sur l'avenir, REWORLD adopte une <strong>approche inspirante et accessible</strong>, montrant que le futur peut être porteur d'espoir. L'expérience mêle narration, interactions et immersion visuelle pour sensibiliser, faire réfléchir et encourager une vision constructive du monde de demain.</p>
+            
             <div class="pitch-objective">
               <span class="objective-label">Objectif</span>
-              <p>Réenchanter le monde en remplaçant la peur par l'imagination positive.</p>
+              <p>Réenchanter le monde en remplaçant la peur par l'imagination positive et actionnable, tout en valorisant les leviers de transformation possibles à l'échelle individuelle et collective.</p>
             </div>
           </div>
         </div>
