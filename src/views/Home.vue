@@ -161,6 +161,7 @@
           <router-link to="/mentions-legales" class="footer-link">Mentions légales</router-link>
           <router-link to="/politique-confidentialite" class="footer-link">Politique de confidentialité</router-link>
           <router-link to="/cgu" class="footer-link">CGU</router-link>
+          <router-link to="/annexes" class="footer-link">Annexes</router-link>
         </div>
         
         <!-- Colonne Contact & Réseaux -->
