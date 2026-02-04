@@ -13,7 +13,6 @@ import MentionsLegales from './views/MentionsLegales.vue'
 import CGU from './views/CGU.vue'
 import PolitiqueConfidentialite from './views/PolitiqueConfidentialite.vue'
 import Annexes from './views/Annexes.vue'
-import IdentiteVisuelle from './views/IdentiteVisuelle.vue'
 import Contact from './views/Contact.vue'
 import NotFound from './views/NotFound.vue'
 
@@ -28,7 +27,6 @@ const routes = [
   { path: '/cgu', name: 'CGU', component: CGU },
   { path: '/politique-confidentialite', name: 'PolitiqueConfidentialite', component: PolitiqueConfidentialite },
   { path: '/annexes', name: 'Annexes', component: Annexes },
-  { path: '/identite-visuelle', name: 'IdentiteVisuelle', component: IdentiteVisuelle },
   { path: '/contact', name: 'Contact', component: Contact },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ]

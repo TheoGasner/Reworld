@@ -1770,6 +1770,7 @@ export default {
   flex: 1;
   height: 8px;
   -webkit-appearance: none;
+  appearance: none;
   background: rgba(6, 182, 212, 0.2);
   border-radius: 4px;
   outline: none;
