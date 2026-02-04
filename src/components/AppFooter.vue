@@ -23,6 +23,7 @@
         <router-link to="/mentions-legales" class="footer-link">Mentions légales</router-link>
         <router-link to="/politique-confidentialite" class="footer-link">Politique de confidentialité</router-link>
         <router-link to="/cgu" class="footer-link">CGU</router-link>
+        <router-link to="/annexes" class="footer-link footer-link-annexes">Annexes du projet</router-link>
       </div>
       
       <!-- Colonne Contact & Réseaux -->
@@ -146,6 +147,25 @@ export default {
 .footer-link:hover {
   color: #00C9A7;
   transform: translateX(5px);
+}
+
+.footer-link-annexes {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #0066FF;
+  border-radius: 8px;
+  background: rgba(0, 102, 255, 0.1);
+  color: #0066FF !important;
+  font-weight: 600;
+  text-align: center;
+}
+
+.footer-link-annexes:hover {
+  background: rgba(0, 102, 255, 0.2);
+  color: #00C9A7 !important;
+  border-color: #00C9A7;
+  transform: none;
 }
 
 /* Social Links */
