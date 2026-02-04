@@ -162,6 +162,7 @@
           <router-link to="/politique-confidentialite" class="footer-link">Politique de confidentialité</router-link>
           <router-link to="/cgu" class="footer-link">CGU</router-link>
           <router-link to="/annexes" class="footer-link">Annexes</router-link>
+          <router-link to="/identite-visuelle" class="footer-link">Identité Visuelle</router-link>
         </div>
         
         <!-- Colonne Contact & Réseaux -->
