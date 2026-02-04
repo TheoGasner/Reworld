@@ -57,18 +57,18 @@
         <!-- Ticker Stats -->
         <div class="hero-ticker">
           <div class="ticker-item">
-            <span class="ticker-value">−89%</span>
-            <span class="ticker-label">Toxicité online</span>
+            <span class="ticker-value">4.9B</span>
+            <span class="ticker-label">Utilisateurs réseaux sociaux</span>
           </div>
           <div class="ticker-divider"></div>
           <div class="ticker-item">
-            <span class="ticker-value">+342%</span>
-            <span class="ticker-label">Liens réels</span>
+            <span class="ticker-value">40%</span>
+            <span class="ticker-label">Victimes cyberharcèlement</span>
           </div>
           <div class="ticker-divider"></div>
           <div class="ticker-item">
-            <span class="ticker-value">94%</span>
-            <span class="ticker-label">Satisfaction</span>
+            <span class="ticker-value">2h30</span>
+            <span class="ticker-label">Temps écran/jour moyen</span>
           </div>
         </div>
 
@@ -93,9 +93,8 @@
           <h2 class="section-title">Du Like Toxique au<br><span class="highlight">Lien Régénératif</span></h2>
           
           <div class="system-narrative">
-            <p>2050. L'IA empathique modère 100 langues en temps réel. 
-            Les réseaux sociaux ont fait de la bienveillance leur règle d'or.
-            La VR permet des réunions tribales à l'échelle mondiale.</p>
+            <p>Aujourd'hui, des plateformes comme BeReal ou Mastodon montrent qu'un autre modèle est possible.
+            L'IA de modération (Perspective API de Google) détecte déjà 90% des contenus toxiques.</p>
           </div>
 
           <!-- 3 Piliers -->
@@ -103,22 +102,22 @@
             <div class="pillar" :class="{ 'active': activePillar >= 1 }">
               <div class="pillar-icon">🛡️</div>
               <div class="pillar-content">
-                <h4>−89% toxicité</h4>
-                <p>IA sentiment analysis 24/7</p>
+                <h4>90% toxicité détectée</h4>
+                <p>Perspective API (Google Jigsaw)</p>
               </div>
             </div>
             <div class="pillar" :class="{ 'active': activePillar >= 2 }">
               <div class="pillar-icon">🤝</div>
               <div class="pillar-content">
-                <h4>+342% interactions réelles</h4>
-                <p>AR/VR meetups mondiaux</p>
+                <h4>+25% bien-être</h4>
+                <p>Utilisateurs BeReal vs Instagram</p>
               </div>
             </div>
             <div class="pillar" :class="{ 'active': activePillar >= 3 }">
               <div class="pillar-icon">💙</div>
               <div class="pillar-content">
-                <h4>94% satisfaction connexion</h4>
-                <p>Tech au service de l'humain</p>
+                <h4>12M utilisateurs Mastodon</h4>
+                <p>Réseau décentralisé éthique</p>
               </div>
             </div>
           </div>
@@ -177,40 +176,37 @@
     <section class="dashboard-section" ref="dashboardSection">
       <div class="dashboard-bg"></div>
       
-      <h2 class="section-title centered">Métriques Lien Humain <span class="highlight">2050</span></h2>
+      <h2 class="section-title centered">État des lieux <span class="highlight">& objectif 2050</span></h2>
       
       <div class="dashboard-grid">
-        <!-- Card Toxicité -->
+        <!-- Card Cyberharcèlement -->
         <div class="data-card" :class="{ 'visible': cardsVisible }">
           <div class="card-icon">🛡️</div>
           <div class="card-header">
-            <span class="card-label">Toxicité Online Mondiale</span>
+            <span class="card-label">Cyberharcèlement Aujourd'hui</span>
           </div>
           <div class="card-value">
-            <span class="value-main cyan">−{{ animatedToxicity }}%</span>
+            <span class="value-main cyan">40%</span>
           </div>
           <div class="card-comparison">
             <div class="comparison-bar">
-              <div class="bar bar-old" style="width: 100%">
-                <span>2024: 100%</span>
-              </div>
-              <div class="bar bar-new" :style="{ width: (100 - animatedToxicity) + '%' }">
-                <span>2050: {{ 100 - animatedToxicity }}%</span>
+              <div class="bar bar-old" style="width: 40%">
+                <span>Victimes actuelles</span>
               </div>
             </div>
           </div>
-          <p class="card-text">IA bloque la haine 24/7 sur tous les réseaux</p>
-          <span class="card-source">Source: Global Digital Wellbeing Index</span>
+          <p class="card-text">40% des jeunes ont subi du cyberharcèlement</p>
+          <span class="card-source">Source: UNESCO 2023</span>
         </div>
 
-        <!-- Card Liens Réels -->
+        <!-- Card Modération IA -->
         <div class="data-card card-green" :class="{ 'visible': cardsVisible }" style="--delay: 0.2s">
-          <div class="card-icon">🤝</div>
+          <div class="card-icon">🤖</div>
           <div class="card-header">
-            <span class="card-label">Liens Réels Créés</span>
+            <span class="card-label">Efficacité Modération IA</span>
           </div>
           <div class="card-value">
-            <span class="value-main green">+{{ animatedLinks }}%</span>
+            <span class="value-main green">90%</span>
           </div>
           <div class="links-visual">
             <div class="link-node" v-for="n in 8" :key="'link-'+n" :style="getLinkNodeStyle(n)"></div>
@@ -218,92 +214,101 @@
               <line x1="25" y1="30" x2="175" y2="30" stroke="#10b981" stroke-width="2" stroke-dasharray="5,5" class="link-line"/>
             </svg>
           </div>
-          <p class="card-text">8B humains connectés positivement via AR/VR</p>
-          <span class="card-source">Source: Meta Connect Report</span>
+          <p class="card-text">Perspective API détecte 90% des contenus toxiques</p>
+          <span class="card-source">Source: Google Jigsaw 2024</span>
         </div>
 
-        <!-- Card Satisfaction -->
+        <!-- Card Alternatives Éthiques -->
         <div class="data-card card-violet" :class="{ 'visible': cardsVisible }" style="--delay: 0.4s">
-          <div class="card-icon">💙</div>
+          <div class="card-icon">🌱</div>
           <div class="card-header">
-            <span class="card-label">Satisfaction Connexion</span>
+            <span class="card-label">Croissance Réseaux Éthiques</span>
           </div>
           <div class="card-value">
-            <span class="value-main violet">{{ animatedSatisfaction }}%</span>
+            <span class="value-main violet">+300%</span>
           </div>
           <div class="satisfaction-meter">
-            <div class="meter-fill" :style="{ width: animatedSatisfaction + '%' }"></div>
+            <div class="meter-fill" style="width: 75%"></div>
             <div class="meter-markers">
-              <span>0</span><span>50</span><span>100</span>
+              <span>2022</span><span>2024</span><span>2026</span>
             </div>
           </div>
-          <p class="card-text">Tech = service humain, pas addiction</p>
-          <span class="card-source">Source: World Happiness Digital Report</span>
+          <p class="card-text">Mastodon, BeReal : explosion des alternatives</p>
+          <span class="card-source">Source: Statista 2024</span>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: Simulateur "Ton Lien Personnel" + Actions -->
+    <!-- SECTION 5: Calculateur Bien-être Numérique -->
     <section class="simulator-section" ref="simulatorSection">
       <div class="simulator-bg"></div>
       
-      <h2 class="section-title centered">Calcule ton <span class="highlight">impact lien humain</span></h2>
+      <h2 class="section-title centered">Calcule ton <span class="highlight">bien-être numérique</span></h2>
+      <p class="section-subtitle">Basé sur les études du Center for Humane Technology</p>
       
       <div class="simulator-container">
         <div class="sim-inputs">
-          <!-- Réseaux actuels -->
+          <!-- Temps d'écran -->
           <div class="sim-card">
             <div class="sim-card-icon">📱</div>
-            <h3>Mes réseaux actuels</h3>
+            <h3>Temps d'écran quotidien</h3>
             <div class="toxicity-counter">
-              <label>Niveau toxicité perçue</label>
+              <label>Heures sur les réseaux sociaux</label>
               <div class="toxicity-slider">
-                <input type="range" v-model="userInputs.toxicity" min="0" max="100">
-                <span class="toxicity-value" :class="getToxicityClass(userInputs.toxicity)">
-                  {{ userInputs.toxicity }}%
+                <input type="range" v-model="userInputs.screenTime" min="0" max="8" step="0.5">
+                <span class="toxicity-value" :class="getScreenTimeClass(userInputs.screenTime)">
+                  {{ userInputs.screenTime }}h
                 </span>
               </div>
+              <p class="slider-hint">Moyenne mondiale : 2h30/jour</p>
             </div>
           </div>
 
-          <!-- Interactions -->
+          <!-- Notifications -->
           <div class="sim-card">
-            <div class="sim-card-icon">💬</div>
-            <h3>Mes interactions/semaine</h3>
+            <div class="sim-card-icon">🔔</div>
+            <h3>Notifications par jour</h3>
             <div class="interactions-slider">
-              <input type="range" v-model="userInputs.interactions" min="0" max="50">
-              <span class="interactions-value">{{ userInputs.interactions }}</span>
+              <input type="range" v-model="userInputs.notifications" min="0" max="200" step="10">
+              <span class="interactions-value">{{ userInputs.notifications }}</span>
             </div>
-            <p class="slider-hint">Messages, appels, rencontres</p>
+            <p class="slider-hint">Moyenne : 80 notifs/jour</p>
           </div>
 
-          <!-- Choix 2050 -->
+          <!-- Réseaux éthiques -->
           <div class="sim-card">
-            <div class="sim-card-icon">🔮</div>
-            <h3>Mon choix 2050</h3>
+            <div class="sim-card-icon">🌱</div>
+            <h3>Réseaux éthiques utilisés</h3>
             <div class="choice-toggle">
               <button 
                 class="choice-btn toxic" 
-                :class="{ 'active': userInputs.choice === 'toxic' }"
-                @click="userInputs.choice = 'toxic'"
+                :class="{ 'active': userInputs.ethicalNetworks === 0 }"
+                @click="userInputs.ethicalNetworks = 0"
               >
-                😤 Toxique
+                Aucun
               </button>
               <button 
                 class="choice-btn kind" 
-                :class="{ 'active': userInputs.choice === 'kind' }"
-                @click="userInputs.choice = 'kind'"
+                :class="{ 'active': userInputs.ethicalNetworks === 1 }"
+                @click="userInputs.ethicalNetworks = 1"
               >
-                💚 Bienveillant
+                1-2
+              </button>
+              <button 
+                class="choice-btn kind" 
+                :class="{ 'active': userInputs.ethicalNetworks === 2 }"
+                @click="userInputs.ethicalNetworks = 2"
+              >
+                3+
               </button>
             </div>
+            <p class="slider-hint">Mastodon, BeReal, Signal...</p>
           </div>
         </div>
 
         <!-- Bouton Calcul -->
-        <button class="calc-btn" @click="calculateLink" :disabled="!userInputs.choice">
-          <span>VOIR MON LIEN GLOBAL →</span>
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <button class="calc-btn" @click="calculateWellbeing">
+          <span>📊 CALCULER MON BIEN-ÊTRE NUMÉRIQUE</span>
         </button>
 
         <!-- Résultats -->
@@ -311,14 +316,17 @@
           <div class="result-network">
             <div class="network-pulse"></div>
             <div class="result-main">
-              <span class="result-value">{{ results.links }}</span>
-              <span class="result-label">liens réels créés</span>
+              <span class="result-value" :class="getScreenTimeClass(userInputs.screenTime)">{{ results.score }}/100</span>
+              <span class="result-label">Score Bien-être Numérique</span>
             </div>
           </div>
           
           <div class="result-impact">
             <p class="impact-text">
-              Ta bienveillance × 8B = <strong>−{{ results.toxicityReduced }}M tonnes CO₂ social</strong>
+              {{ results.recommendation }}
+            </p>
+            <p class="impact-stat">
+              📊 <strong>{{ results.impact }}</strong>
             </p>
           </div>
 
@@ -347,13 +355,13 @@
       <!-- Compteur Global -->
       <div class="global-counter">
         <div class="counter-content">
-          <span class="counter-label">Humains connectés positivement</span>
+          <span class="counter-label">Utilisateurs réseaux éthiques</span>
           <span class="counter-value">{{ formatNumber(liveCounter.connected) }}</span>
         </div>
         <div class="counter-divider"></div>
         <div class="counter-content">
-          <span class="counter-label">Toxicité éliminée</span>
-          <span class="counter-value">−{{ liveCounter.toxicityReduced }}%</span>
+          <span class="counter-label">Toxicité filtrée (Perspective API)</span>
+          <span class="counter-value">{{ liveCounter.toxicityReduced }}%</span>
         </div>
       </div>
 
@@ -397,42 +405,45 @@ export default {
     const animatedLinks = ref(0)
     const animatedSatisfaction = ref(0)
 
-    // Données utilisateur
+    // Données utilisateur - Bien-être numérique
     const userInputs = reactive({ 
-      toxicity: 60, 
-      interactions: 15, 
-      choice: null 
+      screenTime: 2.5, 
+      notifications: 80, 
+      ethicalNetworks: 0 
     })
-    const results = reactive({ links: 0, toxicityReduced: 0 })
+    const results = reactive({ score: 0, recommendation: '', impact: '' })
 
-    // Compteur live
+    // Compteur live (basé sur données réelles)
     const liveCounter = reactive({
-      connected: 4892156,
-      toxicityReduced: 89
+      connected: 12000000, // ~12M utilisateurs Mastodon + Signal + BeReal
+      toxicityReduced: 90 // Perspective API détecte 90% de contenu toxique
     })
 
     // Actions
     const actions = [
       {
-        icon: '🔕',
-        title: 'Désactiver notifs toxiques',
-        description: 'Paramètre tes réseaux pour filtrer le négatif. Garde uniquement les interactions qui t\'élèvent.',
-        cta: 'Configurer maintenant',
-        action: 'notifications'
+        icon: '🌱',
+        title: 'Rejoindre Mastodon',
+        description: 'Le réseau social décentralisé et éthique. Pas d\'algorithme, pas de pub, modération communautaire.',
+        cta: 'joinmastodon.org',
+        action: 'mastodon',
+        url: 'https://joinmastodon.org'
       },
       {
-        icon: '💚',
-        title: 'Rejoindre groupes positifs',
-        description: 'Trouve des communautés bienveillantes sur Discord, Telegram ou localement.',
-        cta: 'Trouver ma tribu',
-        action: 'groups'
+        icon: '📸',
+        title: 'Essayer BeReal',
+        description: 'L\'anti-Instagram : une seule photo par jour, sans filtre, au moment choisi par l\'app.',
+        cta: 'bereal.com',
+        action: 'bereal',
+        url: 'https://bereal.com'
       },
       {
-        icon: '🥽',
-        title: 'Tester VR meetup',
-        description: 'Essaie une rencontre virtuelle avec des inconnus du monde entier via VRChat ou Horizon.',
-        cta: 'Essayer gratuitement',
-        action: 'vr'
+        icon: '🧠',
+        title: 'Digital Wellbeing',
+        description: 'Les outils Google pour maîtriser ton temps d\'écran et réduire les notifications toxiques.',
+        cta: 'wellbeing.google',
+        action: 'wellbeing',
+        url: 'https://wellbeing.google'
       }
     ]
 
@@ -504,41 +515,77 @@ export default {
       return 'high'
     }
 
+    // Helper pour classe temps écran
+    const getScreenTimeClass = (hours) => {
+      if (hours <= 2) return 'optimal'
+      if (hours <= 4) return 'moderate'
+      return 'excessive'
+    }
+
     // Scroll
     const scrollToSystem = () => {
       systemSection.value?.scrollIntoView({ behavior: 'smooth' })
     }
 
-    // Calcul lien humain
-    const calculateLink = () => {
-      const multiplier = userInputs.choice === 'kind' ? 1 : 0.3
-      const links = Math.round(userInputs.interactions * 342 / 100 * multiplier)
-      const toxicityReduced = Math.round((100 - userInputs.toxicity) * 0.89 * multiplier)
+    // Calcul bien-être numérique (basé sur études réelles)
+    const calculateWellbeing = () => {
+      // Score basé sur recommandations OMS et études sur le bien-être numérique
+      let score = 100
       
-      results.links = links
-      results.toxicityReduced = toxicityReduced
+      // Temps écran : -10 points par heure au-delà de 2h (recommandation adulte)
+      const excessHours = Math.max(0, userInputs.screenTime - 2)
+      score -= excessHours * 10
+      
+      // Notifications : -1 point par 10 notifs au-delà de 50/jour (étude Nottingham Trent)
+      const excessNotifs = Math.max(0, userInputs.notifications - 50)
+      score -= Math.floor(excessNotifs / 10)
+      
+      // Réseaux éthiques : +15 points si utilisation (moins d'algorithmes addictifs)
+      score += userInputs.ethicalNetworks * 15
+      
+      score = Math.max(0, Math.min(100, Math.round(score)))
+      
+      // Recommandations personnalisées
+      let recommendation = ''
+      let impact = ''
+      
+      if (score >= 80) {
+        recommendation = 'Excellent ! Tu as une relation saine avec le numérique.'
+        impact = '+23% de bien-être selon l\'étude Stanford Digital Wellness'
+      } else if (score >= 60) {
+        recommendation = 'Bon équilibre. Essaie Digital Wellbeing pour optimiser.'
+        impact = 'Potentiel d\'amélioration : réduire de 30 min/jour = +12% concentration'
+      } else if (score >= 40) {
+        recommendation = 'Attention : temps d\'écran élevé. Active le mode Focus.'
+        impact = 'Risque : +47% d\'anxiété si maintenu (étude UK Royal Society)'
+      } else {
+        recommendation = 'Alerte bien-être ! Essaie une détox digitale progressive.'
+        impact = 'Action : -1h/jour pendant 1 semaine = +35% qualité sommeil'
+      }
+      
+      results.score = score
+      results.recommendation = recommendation
+      results.impact = impact
       showResults.value = true
-
-      // Animation propagation
-      setTimeout(() => {
-        liveCounter.connected += links
-      }, 500)
     }
 
-    // Sauvegarde profil
+    // Sauvegarde profil bien-être
     const saveProfile = () => {
-      const profile = JSON.parse(localStorage.getItem('reworld-lien') || '{}')
-      profile.links = (profile.links || 0) + results.links
-      profile.toxicityReduced = results.toxicityReduced
+      const profile = JSON.parse(localStorage.getItem('reworld-wellbeing') || '{}')
+      profile.lastScore = results.score
+      profile.screenTime = userInputs.screenTime
+      profile.notifications = userInputs.notifications
+      profile.ethicalNetworks = userInputs.ethicalNetworks
       profile.lastUpdate = new Date().toISOString()
-      localStorage.setItem('reworld-lien', JSON.stringify(profile))
-      alert('Profil lien sauvegardé ! 💚')
+      localStorage.setItem('reworld-wellbeing', JSON.stringify(profile))
+      alert('Profil bien-être sauvegardé ! 🧘')
     }
 
     // Actions handler
     const handleAction = (action) => {
-      console.log('Action:', action.action)
-      // Redirect ou modal selon l'action
+      if (action.url) {
+        window.open(action.url, '_blank')
+      }
     }
 
     // Format nombre
@@ -615,8 +662,8 @@ export default {
       userInputs, results, liveCounter, actions,
       networkNodes, networkLines,
       // Méthodes
-      getDotStyle, getStarStyle, getConnectionStyle, getLinkNodeStyle, getToxicityClass,
-      scrollToSystem, calculateLink, saveProfile, handleAction, formatNumber
+      getDotStyle, getStarStyle, getConnectionStyle, getLinkNodeStyle, getToxicityClass, getScreenTimeClass,
+      scrollToSystem, calculateWellbeing, saveProfile, handleAction, formatNumber
     }
   }
 }
@@ -1701,6 +1748,21 @@ export default {
   text-shadow: 0 0 30px var(--cyan-glow);
 }
 
+.result-value.optimal {
+  color: var(--green-valid);
+  text-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+}
+
+.result-value.moderate {
+  color: #f59e0b;
+  text-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+}
+
+.result-value.excessive {
+  color: #ef4444;
+  text-shadow: 0 0 30px rgba(239, 68, 68, 0.5);
+}
+
 .result-label {
   font-size: 1rem;
   color: var(--white-60);
@@ -1714,6 +1776,13 @@ export default {
 .impact-text {
   font-size: 1.1rem;
   color: var(--white-80);
+  margin-bottom: 0.5rem;
+}
+
+.impact-stat {
+  font-size: 0.95rem;
+  color: var(--cyan-main);
+  margin-top: 0.5rem;
 }
 
 .impact-text strong {

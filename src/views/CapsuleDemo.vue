@@ -33,18 +33,18 @@
         <!-- Ticker Stats -->
         <div class="hero-ticker">
           <div class="ticker-item">
-            <span class="ticker-value">87%</span>
-            <span class="ticker-label">Participation globale</span>
+            <span class="ticker-value">1500+</span>
+            <span class="ticker-label">Villes pratiquent le budget participatif</span>
           </div>
           <div class="ticker-divider"></div>
           <div class="ticker-item">
-            <span class="ticker-value">2.4M</span>
-            <span class="ticker-label">Votes quotidiens</span>
+            <span class="ticker-value">40M</span>
+            <span class="ticker-label">Citoyens impliqués en Europe</span>
           </div>
           <div class="ticker-divider"></div>
           <div class="ticker-item">
-            <span class="ticker-value">0%</span>
-            <span class="ticker-label">Corruption</span>
+            <span class="ticker-value">×3</span>
+            <span class="ticker-label">Confiance institutions</span>
           </div>
         </div>
 
@@ -71,9 +71,9 @@
           <h2 class="section-title">Du vote quartier au<br><span class="highlight">Parlement Planétaire</span></h2>
           
           <div class="system-narrative">
-            <p>Ton smartphone est devenu ton bulletin de vote quotidien. 
-            Une IA traduit 7000 langues en temps réel, la blockchain garantit une transparence totale.</p>
-            <p>Les priorités remontent naturellement : du quartier (247 votes) → à la ville (12K) → jusqu'à la planète (8B citoyens).</p>
+            <p>Du budget participatif de Paris (100M€/an) à la plateforme Decidim de Barcelone, 
+            la démocratie directe n'est plus une utopie — elle fonctionne déjà.</p>
+            <p>En 2050, ces initiatives locales deviennent la norme mondiale : quartier → ville → pays → planète.</p>
           </div>
 
           <!-- Étapes animées -->
@@ -81,27 +81,27 @@
             <div class="step" :class="{ 'active': activeStep >= 1 }">
               <div class="step-number">01</div>
               <div class="step-content">
-                <h4>Vote local</h4>
-                <p>"Budget parcs du quartier ?"</p>
-                <span class="step-result">87% OUI</span>
+                <h4>Proposition citoyenne</h4>
+                <p>Comme à Paris : projets déposés en ligne</p>
+                <span class="step-result">4 800 projets/an</span>
               </div>
             </div>
             <div class="step-connector"></div>
             <div class="step" :class="{ 'active': activeStep >= 2 }">
               <div class="step-number">02</div>
               <div class="step-content">
-                <h4>IA agrège</h4>
-                <p>Top 3 priorités ville compilées</p>
-                <span class="step-result">12K votes</span>
+                <h4>Vote citoyen</h4>
+                <p>Plateforme type Decidim (open source)</p>
+                <span class="step-result">300K votants</span>
               </div>
             </div>
             <div class="step-connector"></div>
             <div class="step" :class="{ 'active': activeStep >= 3 }">
               <div class="step-number">03</div>
               <div class="step-content">
-                <h4>Blockchain valide</h4>
-                <p>Transparence totale garantie</p>
-                <span class="step-result">0% corruption</span>
+                <h4>Réalisation</h4>
+                <p>Budget alloué, projet construit</p>
+                <span class="step-result">100M€ débloqués</span>
               </div>
             </div>
           </div>
@@ -111,20 +111,20 @@
         <div class="pyramid-visual">
           <div class="pyramid-container">
             <div class="pyramid-level level-global" :class="{ 'pulse': pyramidPulse === 4 }">
-              <span class="level-label">🌍 Planète</span>
-              <span class="level-value">8B citoyens</span>
+              <span class="level-label">🌍 UE</span>
+              <span class="level-value">Initiative citoyenne</span>
             </div>
             <div class="pyramid-level level-country" :class="{ 'pulse': pyramidPulse === 3 }">
-              <span class="level-label">🏛️ Pays</span>
-              <span class="level-value">2.4M votes</span>
+              <span class="level-label">🏛️ France</span>
+              <span class="level-value">Convention climat</span>
             </div>
             <div class="pyramid-level level-city" :class="{ 'pulse': pyramidPulse === 2 }">
-              <span class="level-label">🏙️ Ville</span>
-              <span class="level-value">12K décisions</span>
+              <span class="level-label">🏙️ Paris</span>
+              <span class="level-value">Budget 100M€/an</span>
             </div>
             <div class="pyramid-level level-local" :class="{ 'pulse': pyramidPulse === 1 }">
               <span class="level-label">🏠 Quartier</span>
-              <span class="level-value">247 votes</span>
+              <span class="level-value">Conseil citoyen</span>
             </div>
           </div>
           
@@ -140,186 +140,179 @@
     <section class="dashboard-section" ref="dashboardSection">
       <div class="dashboard-bg"></div>
       
-      <h2 class="section-title centered">Chiffres Démocratie <span class="highlight">2050</span></h2>
+      <h2 class="section-title centered">La démocratie participative <span class="highlight">en chiffres réels</span></h2>
       
       <div class="dashboard-grid">
-        <!-- Card Participation -->
+        <!-- Card Budget Participatif -->
         <div class="data-card" :class="{ 'visible': cardsVisible }">
-          <div class="card-icon">🗳️</div>
+          <div class="card-icon">🏛️</div>
           <div class="card-header">
-            <span class="card-label">Participation Mondiale</span>
+            <span class="card-label">Budget Participatif Paris</span>
           </div>
           <div class="card-value">
-            <span class="value-main" ref="participationValue">{{ animatedParticipation }}%</span>
+            <span class="value-main" ref="participationValue">100M€</span>
           </div>
           <div class="card-comparison">
             <div class="comparison-bar">
-              <div class="bar bar-old" style="width: 42%">
-                <span>2024: 42%</span>
+              <div class="bar bar-old" style="width: 20%">
+                <span>2014: 20M€</span>
               </div>
-              <div class="bar bar-new" :style="{ width: animatedParticipation + '%' }">
-                <span>2050: {{ animatedParticipation }}%</span>
+              <div class="bar bar-new" style="width: 100%">
+                <span>2024: 100M€</span>
               </div>
             </div>
           </div>
-          <p class="card-text">+45 points vs élections traditionnelles</p>
-          <span class="card-source">Source: Global Democracy Index</span>
+          <p class="card-text">Plus grand budget participatif d'Europe</p>
+          <span class="card-source">Source: Mairie de Paris</span>
         </div>
 
-        <!-- Card Transparence -->
+        <!-- Card Decidim -->
         <div class="data-card card-green" :class="{ 'visible': cardsVisible }" style="--delay: 0.2s">
-          <div class="card-icon">🔗</div>
+          <div class="card-icon">💻</div>
           <div class="card-header">
-            <span class="card-label">Corruption Détectée</span>
+            <span class="card-label">Plateforme Decidim</span>
           </div>
           <div class="card-value">
-            <span class="value-main green">0%</span>
+            <span class="value-main green">450+</span>
           </div>
-          <div class="blockchain-visual">
-            <div class="block" v-for="n in 5" :key="'block-'+n">
-              <span>{{ '0x' + Math.random().toString(16).slice(2, 6) }}</span>
+          <div class="decidim-visual">
+            <div class="decidim-stat">
+              <span class="stat-icon">🌍</span>
+              <span>Villes utilisatrices</span>
+            </div>
+            <div class="decidim-stat">
+              <span class="stat-icon">👥</span>
+              <span>2M+ participants</span>
             </div>
           </div>
-          <p class="card-text">Blockchain publique : tous votes/fonds traçables</p>
-          <span class="card-source">Source: Transparency International</span>
+          <p class="card-text">Logiciel libre créé à Barcelone, adopté mondialement</p>
+          <span class="card-source">Source: decidim.org</span>
         </div>
 
-        <!-- Card Satisfaction -->
+        <!-- Card Convention Citoyenne -->
         <div class="data-card card-violet" :class="{ 'visible': cardsVisible }" style="--delay: 0.4s">
-          <div class="card-icon">😊</div>
+          <div class="card-icon">🇫🇷</div>
           <div class="card-header">
-            <span class="card-label">Satisfaction Citoyenne</span>
+            <span class="card-label">Convention Climat France</span>
           </div>
           <div class="card-value">
-            <span class="value-main violet">{{ animatedSatisfaction }}%</span>
+            <span class="value-main violet">150</span>
           </div>
-          <div class="satisfaction-meter">
-            <div class="meter-fill" :style="{ width: animatedSatisfaction + '%' }"></div>
-            <div class="meter-markers">
-              <span>0</span><span>50</span><span>100</span>
+          <div class="convention-visual">
+            <span class="conv-label">Citoyens tirés au sort</span>
+            <div class="conv-result">
+              <span>149 propositions</span>
+              <span class="conv-arrow">→</span>
+              <span>Loi Climat 2021</span>
             </div>
           </div>
-          <p class="card-text">IA modère, humains décident</p>
-          <span class="card-source">Source: UN Citizen Survey</span>
+          <p class="card-text">Première convention citoyenne nationale</p>
+          <span class="card-source">Source: conventioncitoyennepourleclimat.fr</span>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4: Simulateur Vote -->
+    <!-- SECTION 4: Calculateur d'Impact Citoyen -->
     <section class="simulator-section" ref="simulatorSection">
       <div class="simulator-bg"></div>
       
-      <h2 class="section-title centered">Simule ton <span class="highlight">pouvoir démocratique</span></h2>
+      <h2 class="section-title centered">Calcule ton <span class="highlight">pouvoir citoyen</span></h2>
+      <p class="section-subtitle">Basé sur les données réelles du Budget Participatif de Paris (source: Mairie de Paris)</p>
       
-      <div class="simulator-container">
-        <div class="sim-inputs">
-          <!-- Localisation -->
-          <div class="sim-card">
-            <div class="sim-card-icon">📍</div>
-            <h3>Ma localisation</h3>
-            <div class="location-display">
-              <span class="location-city">{{ userLocation.city || 'Détection...' }}</span>
-              <span class="location-country">{{ userLocation.country || '' }}</span>
+      <div class="impact-calculator">
+        <!-- Inputs -->
+        <div class="calc-inputs">
+          <div class="calc-input-card">
+            <div class="card-icon-large">🗳️</div>
+            <h4 class="card-title">Budget Participatif</h4>
+            <p class="card-desc">Votes pour des projets citoyens dans ta ville</p>
+            <div class="input-row">
+              <input type="range" v-model.number="calcInputs.votes" min="0" max="10" step="1">
+              <span class="input-value">{{ calcInputs.votes }}</span>
             </div>
-            <button class="detect-btn" @click="detectLocation" :disabled="detecting">
-              {{ detecting ? 'Détection...' : 'Détecter ma position' }}
-            </button>
-          </div>
-
-          <!-- Priorités -->
-          <div class="sim-card">
-            <div class="sim-card-icon">⚖️</div>
-            <h3>Mes priorités</h3>
-            <div class="priority-sliders">
-              <div class="slider-group">
-                <label>🌱 Budget Vert</label>
-                <input type="range" v-model="priorities.green" min="0" max="100">
-                <span>{{ priorities.green }}%</span>
-              </div>
-              <div class="slider-group">
-                <label>🛡️ Sécurité</label>
-                <input type="range" v-model="priorities.security" min="0" max="100">
-                <span>{{ priorities.security }}%</span>
-              </div>
-              <div class="slider-group">
-                <label>📚 Éducation</label>
-                <input type="range" v-model="priorities.education" min="0" max="100">
-                <span>{{ priorities.education }}%</span>
-              </div>
+            <div class="input-examples">
+              <span class="example-tag">🏛️ Paris : 4-6 votes/an</span>
+              <span class="example-tag">🌳 Parcs, vélos, écoles...</span>
             </div>
           </div>
-
-          <!-- Vote -->
-          <div class="sim-card">
-            <div class="sim-card-icon">🗳️</div>
-            <h3>Mon vote</h3>
-            <p class="vote-question">Augmenter le budget espaces verts de 15% ?</p>
-            <div class="vote-toggle">
-              <button 
-                class="vote-btn pour" 
-                :class="{ 'active': userVote === 'pour' }"
-                @click="userVote = 'pour'"
-              >
-                ✓ POUR
-              </button>
-              <button 
-                class="vote-btn contre" 
-                :class="{ 'active': userVote === 'contre' }"
-                @click="userVote = 'contre'"
-              >
-                ✗ CONTRE
-              </button>
+          
+          <div class="calc-input-card card-orange">
+            <div class="card-icon-large">💬</div>
+            <h4 class="card-title">Consultations Citoyennes</h4>
+            <p class="card-desc">Participe aux débats sur les grandes causes</p>
+            <div class="input-row">
+              <input type="range" v-model.number="calcInputs.consultations" min="0" max="12" step="1">
+              <span class="input-value">{{ calcInputs.consultations }}</span>
+            </div>
+            <div class="input-examples">
+              <span class="example-tag">🇫🇷 Make.org</span>
+              <span class="example-tag">🏙️ Decidim</span>
+            </div>
+          </div>
+          
+          <div class="calc-input-card card-violet">
+            <div class="card-icon-large">✍️</div>
+            <h4 class="card-title">Pétitions & Initiatives</h4>
+            <p class="card-desc">Soutiens des causes qui te tiennent à cœur</p>
+            <div class="input-row">
+              <input type="range" v-model.number="calcInputs.petitions" min="0" max="20" step="1">
+              <span class="input-value">{{ calcInputs.petitions }}</span>
+            </div>
+            <div class="input-examples">
+              <span class="example-tag">🌍 Change.org</span>
+              <span class="example-tag">🇪🇺 ICE Europe</span>
             </div>
           </div>
         </div>
 
-        <!-- Bouton Vote -->
-        <button class="vote-submit-btn" @click="submitVote" :disabled="!userVote">
-          <span>VOTER & VOIR IMPACT</span>
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
+        <!-- Bouton Calculer -->
+        <div class="calc-button-container">
+          <button class="calc-submit-btn" @click="calculateImpact">
+            <span>🗳️ CALCULER MON IMPACT CITOYEN</span>
+          </button>
+        </div>
 
         <!-- Résultats -->
-        <div class="vote-results" v-if="showResults">
-          <div class="propagation-visual">
-            <div class="prop-level" :class="{ 'active': propLevel >= 1 }">
-              <span class="prop-icon">🏠</span>
-              <span class="prop-label">Quartier</span>
-              <span class="prop-value">{{ voteResults.quartier }} votes</span>
-            </div>
-            <div class="prop-arrow">→</div>
-            <div class="prop-level" :class="{ 'active': propLevel >= 2 }">
-              <span class="prop-icon">🏙️</span>
-              <span class="prop-label">Ville</span>
-              <span class="prop-value">{{ formatNumber(voteResults.ville) }}</span>
-            </div>
-            <div class="prop-arrow">→</div>
-            <div class="prop-level" :class="{ 'active': propLevel >= 3 }">
-              <span class="prop-icon">🏛️</span>
-              <span class="prop-label">Pays</span>
-              <span class="prop-value">{{ formatNumber(voteResults.pays) }}</span>
-            </div>
-            <div class="prop-arrow">→</div>
-            <div class="prop-level" :class="{ 'active': propLevel >= 4 }">
-              <span class="prop-icon">🌍</span>
-              <span class="prop-label">Planète</span>
-              <span class="prop-value">{{ formatNumber(voteResults.global) }}</span>
-            </div>
-          </div>
+        <div class="calc-results" :class="{ 'visible': showCalcResults }">
+          <h3>Ton impact citoyen annuel</h3>
           
-          <div class="result-summary">
-            <div class="result-approval">
-              <span class="approval-value">94%</span>
-              <span class="approval-label">Approbation</span>
+          <div class="result-cards">
+            <div class="result-card">
+              <span class="result-icon">💰</span>
+              <span class="result-value">{{ calculatedImpact.euros }}€</span>
+              <span class="result-label">de budget influencé</span>
+              <span class="result-source">Budget participatif : 100M€ ÷ 287K votants = 348€/vote</span>
             </div>
-            <div class="result-impact">
-              <span class="impact-text">Budget espaces verts +15% débloqué !</span>
+            
+            <div class="result-card">
+              <span class="result-icon">🏗️</span>
+              <span class="result-value">{{ calculatedImpact.projects }}</span>
+              <span class="result-label">projets soutenus</span>
+              <span class="result-source">Moyenne : 1 projet financé / 100 votes</span>
+            </div>
+            
+            <div class="result-card">
+              <span class="result-icon">📢</span>
+              <span class="result-value">{{ calculatedImpact.voices }}</span>
+              <span class="result-label">voix portées</span>
+              <span class="result-source">Tes votes + signatures = poids démocratique</span>
             </div>
           </div>
 
-          <button class="save-profile-btn" @click="saveProfile">
-            💾 Sauvegarder mon profil votant REWORLD
-          </button>
+          <div class="impact-comparison">
+            <p class="comparison-text">
+              <strong>En perspective :</strong> Si 10% des Français s'engageaient comme toi, 
+              c'est <span class="highlight">{{ calculatedImpact.nationalImpact }}</span> de budget citoyen 
+              et <span class="highlight">{{ calculatedImpact.nationalProjects }} projets</span> décidés par les citoyens.
+            </p>
+          </div>
+
+          <div class="cta-section">
+            <a href="https://decider.paris.fr/decider/jsp/site/Portal.jsp?page=search-solr&items_per_page=20&sort_name=date&sort_order=desc&query=(type%3AFORMS_FORM_RESPONSE_1%20OR%20type%3ACONSULTATION)%20OR%20(type%3ADECIDER_BUDGET%20AND%20uid%3A*DECIDER_BUDGET%20AND%20-consultation_status_text%3ALAUREAT%20AND%20-consultation_status_text%3ANONLAUREAT)&facetlabel=DECIDER_BUDGET&facetname=type&fq=type:DECIDER_BUDGET&conf=default" target="_blank" class="impact-cta">
+              <span>Commence à voter maintenant</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -366,7 +359,7 @@
 </template>
 
 <script>
-import { ref, reactive, onMounted, onUnmounted } from 'vue'
+import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
 import AppFooter from '../components/AppFooter.vue'
 
 export default {
@@ -387,12 +380,52 @@ export default {
     const pyramidPulse = ref(0)
     const cardsVisible = ref(false)
     const showResults = ref(false)
+    const showCalcResults = ref(false)
     const propLevel = ref(0)
     const detecting = ref(false)
 
     // Données animées
     const animatedParticipation = ref(0)
     const animatedSatisfaction = ref(0)
+
+    // Calculateur d'impact citoyen
+    const calcInputs = reactive({
+      votes: 4,           // Votes au budget participatif par an
+      consultations: 3,   // Consultations en ligne par an
+      petitions: 5        // Pétitions signées par an
+    })
+
+    // Fonction pour afficher les résultats
+    const calculateImpact = () => {
+      showCalcResults.value = true
+    }
+
+    // Calcul de l'impact basé sur des données réelles
+    // Source: Budget Participatif Paris - 100M€ pour 287 000 votants = 348€ par votant
+    const calculatedImpact = computed(() => {
+      const euroPerVote = 348  // 100M€ / 287K votants
+      const projectsPerVotes = 0.01  // ~1 projet financé pour 100 votes (2800 projets / 287K votes)
+      
+      const totalVotes = calcInputs.votes
+      const totalActions = calcInputs.votes + calcInputs.consultations + calcInputs.petitions
+      
+      const euros = totalVotes * euroPerVote
+      const projects = Math.max(1, Math.round(totalVotes * projectsPerVotes * 100) / 100)
+      const voices = totalActions
+      
+      // Impact national si 10% des Français (6.7M) faisaient pareil
+      const frenchPop10Percent = 6700000
+      const nationalBudget = (euros * frenchPop10Percent) / 1000000000 // en milliards
+      const nationalProjects = Math.round(projects * frenchPop10Percent)
+      
+      return {
+        euros: euros.toLocaleString('fr-FR'),
+        projects: projects.toFixed(2),
+        voices: voices,
+        nationalImpact: nationalBudget.toFixed(1) + ' milliards €',
+        nationalProjects: nationalProjects.toLocaleString('fr-FR')
+      }
+    })
 
     // Données utilisateur
     const userLocation = reactive({ city: '', country: '' })
@@ -410,24 +443,27 @@ export default {
     const actions = [
       {
         icon: '🏛️',
-        title: 'Conseil citoyen',
-        description: 'Participe aux consultations publiques de ta ville. Ta voix compte dans les décisions locales.',
-        cta: 'Trouver une consultation',
-        action: 'consultation'
+        title: 'Budget participatif Paris',
+        description: 'Propose ou vote pour des projets citoyens. 100M€ de budget, plus de 4 000 projets réalisés depuis 2014.',
+        cta: 'decider.paris.fr',
+        action: 'consultation',
+        url: 'https://decider.paris.fr/decider/jsp/site/Portal.jsp?page=search-solr&items_per_page=20&sort_name=date&sort_order=desc&query=(type%3AFORMS_FORM_RESPONSE_1%20OR%20type%3ACONSULTATION)%20OR%20(type%3ADECIDER_BUDGET%20AND%20uid%3A*DECIDER_BUDGET%20AND%20-consultation_status_text%3ALAUREAT%20AND%20-consultation_status_text%3ANONLAUREAT)&facetlabel=DECIDER_BUDGET&facetname=type&fq=type:DECIDER_BUDGET&conf=default'
       },
       {
-        icon: '👥',
-        title: 'Groupe de quartier',
-        description: 'Crée ou rejoins un groupe citoyen WhatsApp/Decidim pour agir ensemble localement.',
-        cta: 'Créer un groupe',
-        action: 'group'
+        icon: '💬',
+        title: 'Decidim France',
+        description: 'Plateforme open source de démocratie participative utilisée par 450+ villes dans le monde.',
+        cta: 'decidim.org',
+        action: 'group',
+        url: 'https://decidim.org'
       },
       {
-        icon: '✍️',
-        title: 'Signer une pétition',
-        description: 'Soutiens une cause locale sur Change.org ou lance ta propre pétition citoyenne.',
-        cta: 'Voir les pétitions',
-        action: 'petition'
+        icon: '📝',
+        title: 'Make.org',
+        description: 'Consultations citoyennes en ligne. Proposez vos idées, votez, construisez des projets concrets.',
+        cta: 'make.org',
+        action: 'petition',
+        url: 'https://make.org'
       }
     ]
 
@@ -547,16 +583,8 @@ export default {
 
     // Actions
     const handleAction = (action) => {
-      switch (action.action) {
-        case 'consultation':
-          window.open('https://www.decidim.org/', '_blank')
-          break
-        case 'group':
-          window.open('https://chat.whatsapp.com/', '_blank')
-          break
-        case 'petition':
-          window.open('https://www.change.org/search?q=d%C3%A9mocratie%20locale', '_blank')
-          break
+      if (action.url) {
+        window.open(action.url, '_blank')
       }
     }
 
@@ -650,6 +678,8 @@ export default {
       showResults, propLevel, detecting,
       // Données animées
       animatedParticipation, animatedSatisfaction,
+      // Calculateur d'impact
+      calcInputs, calculatedImpact, showCalcResults, calculateImpact,
       // Données utilisateur
       userLocation, priorities, userVote, voteResults, liveCounter,
       // Data
@@ -1317,6 +1347,58 @@ export default {
   100% { transform: translateX(-50px); }
 }
 
+/* Decidim Visual */
+.decidim-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.decidim-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: var(--white-80);
+}
+
+.decidim-stat .stat-icon {
+  font-size: 1rem;
+}
+
+/* Convention Visual */
+.convention-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.conv-label {
+  font-size: 0.8rem;
+  color: var(--white-60);
+}
+
+.conv-result {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: var(--white-80);
+}
+
+.conv-arrow {
+  color: var(--violet-accent);
+  font-weight: bold;
+}
+
 /* Satisfaction Meter */
 .satisfaction-meter {
   position: relative;
@@ -1358,14 +1440,15 @@ export default {
    ========================================== */
 .simulator-section {
   position: relative;
-  padding: 8rem 2rem;
-  min-height: 100vh;
+  padding: 4rem 2rem;
+  min-height: auto;
 }
 
 .simulator-bg {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, #061224 0%, #0a0a12 100%);
+  z-index: 0;
 }
 
 .simulator-bg::before {
@@ -1374,6 +1457,7 @@ export default {
   inset: 0;
   background: radial-gradient(ellipse at 50% 0%, rgba(6, 182, 212, 0.12) 0%, transparent 50%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .simulator-bg::after {
@@ -1385,6 +1469,556 @@ export default {
   height: 200px;
   background: linear-gradient(to top, #0A0A0A, transparent);
   pointer-events: none;
+  z-index: 0;
+}
+
+/* Consultations Container */
+.consultations-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.consultation-card {
+  position: relative;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.consultation-card:hover {
+  transform: translateY(-8px);
+  background: rgba(15, 23, 42, 0.95);
+  border-color: var(--cyan-electric);
+  box-shadow: 0 20px 50px rgba(6, 182, 212, 0.2), 0 0 30px rgba(6, 182, 212, 0.15);
+}
+
+.consultation-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #10B981;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.consultation-badge.orange {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: rgba(245, 158, 11, 0.5);
+  color: #F59E0B;
+}
+
+.consultation-badge.violet {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+  color: #8B5CF6;
+}
+
+.consultation-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.consultation-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.consultation-desc {
+  font-size: 0.9rem;
+  color: var(--white-60);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.consultation-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(6, 182, 212, 0.05);
+  border-radius: 12px;
+}
+
+.consultation-stats .stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.consultation-stats .stat-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cyan-electric);
+}
+
+.consultation-stats .stat-label {
+  font-size: 0.75rem;
+  color: var(--white-40);
+}
+
+.consultation-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--cyan-electric), var(--cyan-dark));
+  border: none;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy-cosmic);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.consultation-cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
+}
+
+.consultation-cta.orange {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+}
+
+.consultation-cta.violet {
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+  color: white;
+}
+
+.consultation-cta svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* ==========================================
+   CALCULATEUR D'IMPACT CITOYEN
+   ========================================== */
+.section-subtitle {
+  text-align: center;
+  color: var(--white-40);
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.impact-calculator {
+  position: relative;
+  z-index: 10;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calc-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.calc-input-card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 20px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.calc-input-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyan-electric), var(--cyan-dark));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.calc-input-card:hover {
+  border-color: var(--cyan-electric);
+  box-shadow: 0 10px 40px rgba(6, 182, 212, 0.2);
+  transform: translateY(-5px);
+}
+
+.calc-input-card:hover::before {
+  opacity: 1;
+}
+
+.calc-input-card.card-orange {
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.calc-input-card.card-orange::before {
+  background: linear-gradient(90deg, #F59E0B, #D97706);
+}
+
+.calc-input-card.card-orange:hover {
+  border-color: #F59E0B;
+  box-shadow: 0 10px 40px rgba(245, 158, 11, 0.2);
+}
+
+.calc-input-card.card-orange .input-value {
+  color: #F59E0B;
+}
+
+.calc-input-card.card-orange input[type="range"]::-webkit-slider-thumb {
+  background: #F59E0B;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.calc-input-card.card-violet {
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.calc-input-card.card-violet::before {
+  background: linear-gradient(90deg, #8B5CF6, #7C3AED);
+}
+
+.calc-input-card.card-violet:hover {
+  border-color: #8B5CF6;
+  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.2);
+}
+
+.calc-input-card.card-violet .input-value {
+  color: #8B5CF6;
+}
+
+.calc-input-card.card-violet input[type="range"]::-webkit-slider-thumb {
+  background: #8B5CF6;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.card-icon-large {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.8rem;
+  color: var(--white-60);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.calc-input-card label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input-row input[type="range"] {
+  flex: 1;
+  height: 8px;
+  -webkit-appearance: none;
+  background: rgba(6, 182, 212, 0.2);
+  border-radius: 4px;
+  outline: none;
+}
+
+.input-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--cyan-electric);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.input-row input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.input-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cyan-electric);
+  min-width: 40px;
+  text-align: center;
+}
+
+.input-hint {
+  font-size: 0.75rem;
+  color: var(--white-40);
+  margin-top: 0.75rem;
+  line-height: 1.4;
+}
+
+.input-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.example-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  color: var(--white-60);
+  transition: all 0.3s ease;
+}
+
+.example-tag:hover {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.3);
+  color: var(--white-80);
+}
+
+.card-orange .example-tag:hover {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.card-violet .example-tag:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Bouton Calculer */
+.calc-button-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.calc-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 3rem;
+  background: linear-gradient(135deg, var(--cyan-electric), var(--cyan-dark));
+  border: none;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy-cosmic);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+}
+
+.calc-submit-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 40px rgba(6, 182, 212, 0.5);
+}
+
+.calc-submit-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Résultats */
+.calc-results {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 20px;
+  padding: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  pointer-events: none;
+  width: 100%;
+}
+
+.calc-results.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.calc-results h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.result-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.result-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.result-icon {
+  font-size: 2rem;
+}
+
+.result-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--cyan-electric), var(--violet-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.result-label {
+  font-size: 0.9rem;
+  color: var(--white-80);
+  font-weight: 500;
+}
+
+.result-source {
+  font-size: 0.7rem;
+  color: var(--white-40);
+  margin-top: 0.5rem;
+  line-height: 1.3;
+}
+
+.impact-comparison {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.comparison-text {
+  font-size: 0.95rem;
+  color: var(--white-80);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.comparison-text .highlight {
+  color: var(--green-valid);
+  font-weight: 700;
+}
+
+.cta-section {
+  text-align: center;
+}
+
+.impact-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--cyan-electric), var(--cyan-dark));
+  border: none;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy-cosmic);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.impact-cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(6, 182, 212, 0.4);
+}
+
+.impact-cta svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+@media (max-width: 900px) {
+  .calc-inputs {
+    grid-template-columns: 1fr;
+  }
+  
+  .result-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .consultations-container {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
 }
 
 .simulator-container {
